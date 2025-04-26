@@ -1,0 +1,182 @@
+/* Barra de navegação */
+.logo {
+  font-size: 2em;
+  color: #fff;
+  user-select: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navigation a {
+  position: relative;
+  font-size: 1.1em;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+}
+  
+.navigation a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transform: scaleX(0);
+  transition: transform .5s;
+  transform-origin: right;
+}
+  
+.navigation a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+  
+.navigation .btnLogin-popup {
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: .5s;
+}
+  
+.navigation .btnLogin-popup:hover {
+  background: #fff;
+  color: #162938;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 97;
+  display: none;
+}
+
+.wrapper.active-popup ~ .overlay {
+  display: block;
+}
+
+
+/* Barra de pesquisa */
+.search-box {
+  position: relative;
+  width: 250px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px 40px 10px 15px;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  background: transparent;
+  color: #fff;
+  font-size: 1em;
+  outline: none;
+  transition: 0.3s;
+}
+
+.search-box input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.search-box input:focus {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.search-box .icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 1.2em;
+  pointer-events: none;
+}
+
+
+/* Botão de menu */
+.menu-toggle,
+.close-toggle {
+  font-size: 2em;
+  color: #fff;
+  cursor: pointer;
+  z-index: 101;
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  transition: 0.3s;
+}
+
+.menu-toggle {
+  display: block;
+}
+
+.close-toggle {
+  display: none;
+}
+
+.sidebar.active ~ .close-toggle {
+  display: block;
+}
+
+.sidebar.active .menu-toggle {
+  display: none;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 250px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-right: 2px solid rgba(255, 255, 255, .5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+  transition: left 0.4s ease;
+  z-index: 98;
+  padding: 60px 20px;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  font-size: 1.1em;
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta nome="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adicionar Livro</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/adicionar.css">
+</head>
+<body>
+    
+    <div class="modal" id="customAlert">
+        <div class="modal-content">
+            <span class="close-btn" id="closeAlert"></span>
+            <h2 id="alertMessage">Livro adicionado com sucesso!</h2>
+            <button id="closeModalBtn">Fechar</button>
+        </div>
+    </div>
+
+    <header>
+
+        <div class="menu-toggle" id="menuToggle">
+            <ion-icon name="menu-outline"></ion-icon>
+        </div>
+        <div class="close-toggle" id="closeToggle">
+            <ion-icon name="close"></ion-icon>
+        </div>
+        
+        <nav class="sidebar" id="sidebar">
+          <ul>
+            <li><a href="#">Meu Perfil</a></li>
+            <li><a href="#">Favoritos</a></li>
+            <li><a href="adicionar.html">Adicionar Livro</a></li>
+            <li><a href="#">Configurações de Conta</a></li>
+            <li><a href="#">Sair</a></li>
+          </ul>
+        </nav>
+    
+        <a href="index.html" class="logo">Biblioteca</a>
+        
+        <div class="search-box">
+          <input type="text" placeholder="Pesquisar...">
+          <i class="icon"><ion-icon name="search-outline"></ion-icon></i>
+        </div>
+        
+        <nav class="navigation">
+          <a href="#">Menu</a>
+          <a href="#">Sobre</a>
+          <a href="#">Serviços</a>
+          <a href="#">Contato</a>
+          <button class="btnAdd-popup">Adicionar</button>
+        </nav>
+    </header>
+    
+    <div class="overlay"></div>
+    <div class="wrapper-add">
+        <span class="icon-close-add">
+            <ion-icon name="close"></ion-icon>
+        </span>
+        <div class="form-box add">
+            <h2>Adicionar Livro</h2>
+            <form action="#">
+                <div class="input-box">
+                    <input type="text" required placeholder="">
+                    <label>Título</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" required placeholder="">
+                    <label>Autor</label>
+                </div>
+                <div class="input-box">
+                    <input type="number" required placeholder="">
+                    <label>Ano</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" required placeholder="">
+                    <label>Gênero</label>
+                </div>
+                <div class="input-box">
+                    <textarea required rows="4"></textarea>
+                    <label>Sinopse</label>
+                </div>
+                <div class="button-container">
+                    <button type="button" class="btn-cancel">Cancelar</button>
+                    <button type="submit" class="btn-confirm">Confirmar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+
+    <script src="../JavaScript/addscript.js"></script>
+    <script src="../JavaScript/function.js"></script>
+    <script src="../JavaScript/sidebarscript.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

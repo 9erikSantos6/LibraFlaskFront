@@ -1,0 +1,162 @@
+body {
+    background: url(../img/Escritorio3.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.btnAdd-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+     border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+}
+
+.btnAdd-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+
+.wrapper-add {
+    position: relative;
+    width: 550px;
+    height: 500px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease, height .2s ease;
+    margin-top: 60px;
+}
+
+.wrapper-add.active-popup {
+    transform: scale(1);
+}
+
+.wrapper-add.active {
+    height: 550px;
+}
+
+.wrapper-add .form-box.add {
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper-add .form-box.add h2 {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+.wrapper-add .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #fff;
+    margin: 30px 0;
+}
+
+.wrapper-add .input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.wrapper-add .input-box input:focus~label,
+.wrapper-add .input-box input:not(:placeholder-shown)~label {
+    top: -5px;
+}
+
+.wrapper-add .input-box textarea:focus ~ label,
+.wrapper-add .input-box textarea:valid ~ label {
+    top: -5px;
+}
+
+
+.wrapper-add .input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.wrapper-add .input-box textarea {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+    resize: none;
+}
+
+.wrapper-add .icon-close-add {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 2em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.wrapper-add .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.wrapper-add .btn-cancel,
+.wrapper-add .btn-confirm {
+    width: 48%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #000;
+    font-weight: 500;
+}
+
+.wrapper-add .btn-cancel {
+    background-color: #f44336;
+}
+
+.wrapper-add .btn-confirm {
+    background-color: #4CAF50;
+}

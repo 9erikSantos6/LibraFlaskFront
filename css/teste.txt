@@ -1,0 +1,117 @@
+/* Barra lateral */
+.menu-toggle,
+.close-toggle {
+  font-size: 2em;
+  color: #fff;
+  cursor: pointer;
+  z-index: 101;
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  transition: 0.3s;
+}
+
+/* Mostrar o botão de fechar ao ativar o menu */
+.sidebar.active ~ .close-toggle {
+  display: block;
+}
+
+/* Ocultar o botão de menu quando a sidebar estiver ativa */
+.sidebar.active .menu-toggle {
+  display: none;
+}
+
+/* .menu-toggle {
+  display: block;
+} */
+
+/* .close-toggle {
+  display: none;
+} */
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 250px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-right: 2px solid rgba(255, 255, 255, .5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+  transition: left 0.4s ease;
+  z-index: 98;
+  padding: 60px 20px;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  font-size: 1.1em;
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Ícone do X (fechar o menu)
+.icon-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  font-size: 2em;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Menu Toggle - 3 traços */
+/* .menu-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: all 0.3s ease;
+}
+
+.sidebar.active .menu-toggle span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 10px;
+}
+
+.sidebar.active .menu-toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.sidebar.active .menu-toggle span:nth-child(3) {
+  transform: rotate(-45deg);
+  bottom: 10px;
+}  */
