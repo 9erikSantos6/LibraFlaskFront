@@ -50,7 +50,6 @@ document.addEventListener('click', (e) => {
     }
 });
 
-
 // Envio do formulário de registro
 const registerForm = document.querySelector('.form-box.register form');
 registerForm.addEventListener('submit', (e) => {
@@ -62,8 +61,8 @@ registerForm.addEventListener('submit', (e) => {
     const senha = registerForm.querySelector('input[type="password"]').value; // Acessando o campo de senha
     const termos = registerForm.querySelector('input[type="checkbox"]'); // Acessando o campo de termos de serviço
 
-     // Verificar se aceitou os termos
-     if (!termos.checked) {
+    // Verificar se aceitou os termos
+    if (!termos.checked) {
         alertMessage.textContent = 'Você deve aceitar os termos e condições!';
         customAlert.style.display = 'flex';
         return;
@@ -73,6 +72,7 @@ registerForm.addEventListener('submit', (e) => {
     if (!isValidEmail(email)) {
         alertMessage.textContent = 'Por favor, insira um e-mail válido!';
         customAlert.style.display = 'flex';
+        registerForm.querySelectorAll('input[placeholder=""]')[1].value = '';
         return;
     }
 
@@ -104,14 +104,6 @@ registerForm.addEventListener('submit', (e) => {
     // Fechar a tela de registro
     wrapper.classList.remove('active');
 });
-
-
-
-
-
-
-
-
 
 // Fechar o alerta do modal
 closeAlert.addEventListener('click', () => {

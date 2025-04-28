@@ -1,45 +1,73 @@
 // Selecionando os elementos
-const loginBtn = document.querySelector('.btn');
+const loginForm = document.querySelector('.login-form');
 const emailInput = document.querySelector('input[type="email"]');
 const passwordInput = document.querySelector('input[type="password"]');
+const loginBtn = document.querySelector('.btn');
 const wrapper = document.querySelector('.wrapper');
 
-const alertMessage = document.querySelector('#alertMessage');
-const closeModalBtn = document.querySelector('#closeModalBtn');
+// Modal de sucesso
+const customAlert = document.getElementById('customAlert');
+const closeAlert = document.getElementById('closeAlert');
+const closeModalBtn = document.getElementById('closeModalBtn');
+const alertMessage = document.getElementById('alertMessage');
 
-// Dados de login 
-const validEmail = 'root@gmail.com';
-const validPassword = '123';
+
 
 // Função que lida com o login
 function handleLogin(e) {
     e.preventDefault();
 
+    console.log('botao de login clicado');
+
     const email = emailInput.value;
     const password = passwordInput.value;
 
-    // Verificar se o email e senha estão corretos
-    if (email === validEmail && password === validPassword) {
-        // Exibe mensagem de sucesso
-        alertMessage.textContent = 'Login realizado com sucesso!';
-        document.getElementById('customAlert').classList.add('active'); // Exibe o alerta
-
-        // Fecha o modal de login
-        wrapper.style.display = 'none';
-
-        // Muda o texto do botão para "Logado"
-        loginBtn.textContent = 'Logado';
-    } else {
-        // Caso as credenciais estejam erradas
-        alertMessage.textContent = 'Credenciais inválidas. Tente novamente.';
-        document.getElementById('customAlert').classList.add('active'); // Exibe o alerta
+    // Verificar se o e-mail é válido
+    if (!isValidEmail(email)) {
+        alertMessage.textContent = 'Por favor, insira um e-mail válido!';
+        customAlert.style.display = 'flex'; // Exibe o alerta
+        return;
     }
+
+    // Verificar se o usuário existe
+    const users = getUsers();
+    const user = users.find(u => u.email === email);
+
+    if (!user) {
+        alertMessage.textContent = 'Este e-mail não está cadastrado!';
+        customAlert.style.display = 'flex'; // Exibe o alerta
+        return;
+    }
+
+    // Verificar se a senha está correta
+    if (user.senha !== password) {
+        alertMessage.textContent = 'Senha incorreta. Tente novamente.';
+        customAlert.style.display = 'flex'; // Exibe o alerta
+        return;
+    }
+
+    // Se tudo estiver correto
+    alertMessage.textContent = 'Login realizado com sucesso!';
+    customAlert.style.display = 'flex'; // Exibe o alerta
+
+    // Fechar a tela de login
+    wrapper.style.display = 'none';
+
+    // Mudar o texto do botão para "Logado"
+    loginBtn.textContent = 'Logado';
 }
 
-// Evento para fechar o alerta
-closeModalBtn.addEventListener('click', () => {
-    document.getElementById('customAlert').classList.remove('active'); // Fecha o alerta
+// Adicionando o evento submit ao formulário de login
+loginForm.addEventListener('submit', handleLogin);
+
+
+
+// Fechar o alerta do modal
+closeAlert.addEventListener('click', () => {
+    customAlert.style.display = 'none'; // Esconde o modal
 });
 
-// Evento de envio do formulário de login
-loginBtn.addEventListener('click', handleLogin);
+// Fechar o alerta com o botão 'Fechar'
+closeModalBtn.addEventListener('click', () => {
+    customAlert.style.display = 'none'; // Esconde o modal
+});
