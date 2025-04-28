@@ -115,3 +115,84 @@
   transform: rotate(-45deg);
   bottom: 10px;
 }  */
+
+
+<div class="book-item">
+        <img src="#" alt="Livro 2">
+        <h3>Título do Livro 2</h3>
+        <p>Autor: Autor 2</p>
+        <p>Gênero: Gênero 2</p>
+        <p>Ano: 2021</p>
+      </div>
+
+      <div class="book-item">
+        <img src="#" alt="Livro 2">
+        <h3>Título do Livro 2</h3>
+        <p>Autor: Autor 2</p>
+        <p>Gênero: Gênero 2</p>
+        <p>Ano: 2021</p>
+      </div>
+
+      <div class="book-item">
+        <img src="#" alt="Livro 2">
+        <h3>Título do Livro 2</h3>
+        <p>Autor: Autor 2</p>
+        <p>Gênero: Gênero 2</p>
+        <p>Ano: 2021</p>
+      </div>
+
+      <div class="book-item">
+        <img src="#" alt="Livro 2">
+        <h3>Título do Livro 2</h3>
+        <p>Autor: Autor 2</p>
+        <p>Gênero: Gênero 2</p>
+        <p>Ano: 2021</p>
+      </div>
+
+      <div class="book-item">
+        <img src="#" alt="Livro 2">
+        <h3>Título do Livro 2</h3>
+        <p>Autor: Autor 2</p>
+        <p>Gênero: Gênero 2</p>
+        <p>Ano: 2021</p>
+      </div>
+
+      <div class="book-item">
+        <img src="#" alt="Livro 2">
+        <h3>Título do Livro 2</h3>
+        <p>Autor: Autor 2</p>
+        <p>Gênero: Gênero 2</p>
+        <p>Ano: 2021</p>
+      </div>
+
+      <div class="book-item">
+        <img src="#" alt="Livro 2">
+        <h3>Título do Livro 2</h3>
+        <p>Autor: Autor 2</p>
+        <p>Gênero: Gênero 2</p>
+        <p>Ano: 2021</p>
+      </div>
+
+      <div class="book-item">
+        <img src="#" alt="Livro 2">
+        <h3>Título do Livro 2</h3>
+        <p>Autor: Autor 2</p>
+        <p>Gênero: Gênero 2</p>
+        <p>Ano: 2021</p>
+      </div>
+
+      <div class="book-item">
+        <img src="../img/livro1.webp" alt="Livro 2">
+        <h3>Título do Livro 2</h3>
+        <p>Autor: Autor 2</p>
+        <p>Gênero: Gênero 2</p>
+        <p>Ano: 2021</p>
+      </div>
+
+      <div class="book-item">
+        <img src="#" alt="Livro 2">
+        <h3>Título do Livro 2</h3>
+        <p>Autor: Autor 2</p>
+        <p>Gênero: Gênero 2</p>
+        <p>Ano: 2021</p>
+      </div>
