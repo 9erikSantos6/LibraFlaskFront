@@ -155,8 +155,10 @@ body {
 
 .wrapper-add .btn-cancel:hover {
     background: red;
+    color: #fff;
 }
 
 .wrapper-add .btn-confirm:hover {
     background: green;
+    color: #fff;
 }
