@@ -42,7 +42,7 @@ form.addEventListener('submit', (e) => {
     // Obter os valores dos campos do formulário
     const titulo = form.querySelector('input[placeholder=""]').value;
     const autor = form.querySelectorAll('input[placeholder=""]')[1].value;
-    const ano = form.querySelector('input[type="number"]').value;
+    const ano = form.querySelector('input[type="text"]').value;
     const genero = form.querySelectorAll('input[placeholder=""]')[2].value;
     const sinopse = form.querySelector('textarea').value;
 
@@ -75,6 +75,16 @@ form.addEventListener('submit', (e) => {
 
     // Habilitar o botão de envio novamente após limpar o formulário
     confirmBtn.disabled = false;
+});
+
+document.getElementById("data").addEventListener("input", function(e) {
+    let data = e.target.value.replace(/\D/g, '');
+    if (data.length > 2 && data.length <= 4) {
+        data = data.slice(0, 2) + '/' + data.slice(2);
+    } else if (data.length > 4) {
+        data = data.slice(0, 2) + '/' + data.slice(2, 4) + '/' + data.slice(4, 8);
+    }
+    e.target.value = data;
 });
 
 // Botão Cancelar: Limpar formulário e fechar a janela
