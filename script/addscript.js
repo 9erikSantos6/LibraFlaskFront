@@ -40,42 +40,52 @@ form.addEventListener('submit', (e) => {
     e.preventDefault(); // Previne o envio padrão para não recarregar a página
 
     // Obter os valores dos campos do formulário
-    const titulo = form.querySelector('input[placeholder=""]').value;
-    const autor = form.querySelectorAll('input[placeholder=""]')[1].value;
-    const ano = form.querySelector('input[type="text"]').value;
-    const genero = form.querySelectorAll('input[placeholder=""]')[2].value;
+    const titulo = form.querySelector('titulo').value;
+    const autor = form.querySelectorAll('autor]').value;
+    const ano = form.querySelector('ano').value;
+    const genero = form.querySelectorAll('genero').value;
     const sinopse = form.querySelector('textarea').value;
 
-
-     // Criar um objeto livro
-     const newBook = {
+    // Criar um objeto livro
+    const newBook = {
         titulo: titulo,
         autor: autor,
         ano: ano,
         genero: genero,
         sinopse: sinopse
     };
-    
-    // Salvar os dados no localStorage
-    saveBookData(newBook);
 
-    // Exibe uma mensagem personalizada
-    alertMessage.textContent = 'Livro adicionado com sucesso!';
-    customAlert.style.display = 'flex';
+    // Enviar os dados para o backend (API Flask)
+    fetch('/livros', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newBook)
+    })
+    .then(response => response.json()) // Espera a resposta em JSON
+    .then(data => {
+        // Exibe a mensagem personalizada de sucesso
+        alertMessage.textContent = 'Livro adicionado com sucesso!';
+        customAlert.style.display = 'flex';
+
+        // Fechar a janela após o envio
+        wrapperAdd.classList.remove('active-popup');
+        wrapperAdd.classList.remove('active');
+
+        // Limpar o formulário após o envio
+        form.reset();
+    })
+    .catch(error => {
+        console.error('Erro ao adicionar livro:', error);
+        alertMessage.textContent = 'Ocorreu um erro ao adicionar o livro.';
+        customAlert.style.display = 'flex';
+    });
 
     // Desabilitar o botão de envio após o primeiro envio
-    confirmBtn.disabled = true;
-
-    // Fechar a janela após o envio
-    wrapperAdd.classList.remove('active-popup');
-    wrapperAdd.classList.remove('active');
-
-    // Limpar o formulário após o envio
-    form.reset();
-
-    // Habilitar o botão de envio novamente após limpar o formulário
     confirmBtn.disabled = false;
 });
+
 
 document.getElementById("data").addEventListener("input", function(e) {
     let data = e.target.value.replace(/\D/g, '');
@@ -86,6 +96,27 @@ document.getElementById("data").addEventListener("input", function(e) {
     }
     e.target.value = data;
 });
+
+    // Salvar os dados no localStorage
+    // saveBookData(newBook);
+
+    // Exibe uma mensagem personalizada
+    // alertMessage.textContent = 'Livro adicionado com sucesso!';
+    // customAlert.style.display = 'flex';
+
+    // Desabilitar o botão de envio após o primeiro envio
+    // confirmBtn.disabled = true;
+
+    // Fechar a janela após o envio
+    // wrapperAdd.classList.remove('active-popup');
+    // wrapperAdd.classList.remove('active');
+
+    // Limpar o formulário após o envio
+    // form.reset();
+
+    // Habilitar o botão de envio novamente após limpar o formulário
+    // confirmBtn.disabled = false;
+
 
 // Botão Cancelar: Limpar formulário e fechar a janela
 cancelBtn.addEventListener('click', () => {

@@ -51,14 +51,15 @@ document.addEventListener('click', (e) => {
 });
 
 // Envio do formulário de registro
-const registerForm = document.querySelector('.form-box.register form');
+const registerForm = document.querySelector('form');
+const usuarioInput = document.getElementById('usuarioInput');
 registerForm.addEventListener('submit', (e) => {
     e.preventDefault(); // Previne o envio padrão
 
     // Obter os valores dos campos do formulário
-    const nome = registerForm.querySelector('input[placeholder=""]').value; // Acessando o campo de nome
-    const email = registerForm.querySelectorAll('input[placeholder=""]')[1].value; // Acessando o campo de email
-    const senha = registerForm.querySelector('input[type="password"]').value; // Acessando o campo de senha
+    const nome = registerForm.querySelector('nome').value; // Acessando o campo de nome
+    const email = registerForm.querySelector('email').value; // Acessando o campo de email
+    const senha = registerForm.querySelector('password').value; // Acessando o campo de senha
     const termos = registerForm.querySelector('input[type="checkbox"]'); // Acessando o campo de termos de serviço
 
     // Verificar se aceitou os termos
@@ -83,13 +84,19 @@ registerForm.addEventListener('submit', (e) => {
         registerForm.querySelectorAll('input[placeholder=""]')[1].value = '';
         return;
     }
+
+    // Gera um nome de usuário automaticamente com base no nome
+    const username = nome.toLowerCase().replace(/\s+/g, '') + Math.floor(Math.random() * 1000);
+    usuarioInput.value = username;
     
     // Criar um objeto usuário
     const newUser = {
+        username: username,
         nome: nome,
         email: email,
         senha: senha
     };
+    console.log(newUser);
 
     // Salvar os dados do usuário no localStorage
     saveUserData(newUser);

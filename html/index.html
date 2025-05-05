@@ -54,11 +54,10 @@
     </nav>
   </header>
 
-  <div class="wrap">
+  <!-- <div class="wrap">
     <div class="book-section">
         <button class="nav-button left" id="prevBtn">&#10094;</button>
         <div class="book-container" id="bookContainer">
-
             <div class="book-item">
               <img src="../img/livro1.webp" alt="Título do Livro 1">
               <h2>Título do Livro 1</h2>
@@ -111,9 +110,8 @@
             </div>
         </div>
         <button class="nav-button right" id="nextBtn">&#10095;</button>
-    </div>
+    </div> -->
 </div>
-
   <div class="overlay"></div>
   <div class="wrapper">
     <span class="icon-close"><ion-icon name="close"></ion-icon></span>
@@ -123,12 +121,12 @@
       <form action="#">
         <div class="input-box">
           <span class="icon"><ion-icon name="mail"></ion-icon></span>
-          <input type="email" required placeholder="">
+          <input type="email" id = "email" required placeholder="">
           <label>Email</label>
         </div>
         <div class="input-box">
           <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-          <input type="password" required placeholder="">
+          <input type="password" id="password" placeholder="">
           <label>Senha</label>
         </div>
         <div class="remember-forgot">
@@ -137,7 +135,7 @@
         </div>
         <button type="submit" class="btn">Login</button>
         <div class="login-register">
-          <p>Não tem uma conta?<a    class="register-link">Registre-se</a></p>
+          <p>Não tem uma conta?<a class="register-link">Registre-se</a></p>
         </div>
       </form>
     </div>
@@ -145,19 +143,22 @@
     <div class="form-box register">
       <h2>Registre-se</h2>
       <form action="#">
+
+        <input type="hidden" name="usuario" id="usuarioInput">
+
         <div class="input-box">
           <span class="icon"><ion-icon name="person"></ion-icon></span>
-          <input type="text" required placeholder="">
+          <input type="text" id = "name" required placeholder="">
           <label>Nome</label>
         </div>
         <div class="input-box">
           <span class="icon"><ion-icon name="mail"></ion-icon></span>
-          <input type="email" required placeholder="">
+          <input type="email" id = "email" required placeholder="">
           <label>Email</label>
         </div>
         <div class="input-box">
           <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-          <input type="password" required placeholder="">
+          <input type="password" id = "password" required placeholder="">
           <label>Senha</label>
         </div>
         <div class="remember-forgot">
@@ -166,18 +167,18 @@
         </div>
         <button type="submit" class="btn">Registre-se</button>
         <div class="login-register">
-          <p>Ja tem uma conta?<a     class="login-link">Login</a></p>
+          <p>Ja tem uma conta?<a class="login-link">Login</a></p>
         </div>
       </form>
     </div>
   </div>
   
-  <script src="../JavaScript/function.js"></script>
-  <script src="../JavaScript/registerscript.js"></script>
-  <script src="../JavaScript/sidebarscript.js"></script>
-  <script src="../JavaScript/searchscript.js"></script>
-  <script src="../JavaScript/bookscript.js"></script>
-  <script src="../JavaScript/loginscript.js"></script>
+  <script src="../script/function.js"></script>
+  <script src="../script/registerscript.js"></script>
+  <script src="../script/sidebarscript.js"></script>
+  <script src="../script/searchscript.js"></script>
+  <script src="../script/bookscript.js"></script>
+  <script src="../script/loginscript.js"></script>
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
