@@ -40,17 +40,24 @@ form.addEventListener('submit', (e) => {
     e.preventDefault(); // Previne o envio padrão para não recarregar a página
 
     // Obter os valores dos campos do formulário
-    const titulo = form.querySelector('titulo').value;
-    const autor = form.querySelectorAll('autor]').value;
-    const ano = form.querySelector('ano').value;
-    const genero = form.querySelectorAll('genero').value;
-    const sinopse = form.querySelector('textarea').value;
+    const titulo = document.getElementById('titulo').value;
+    const autor = document.getElementById('autor').value;
+    const data = document.getElementById('data').value;
+    const genero = document.getElementById('genero').value;
+    const sinopse = document.getElementById('sinopse').value;
+
+    // Verificar se todos os campos foram preenchidos
+    // if (!titulo || !autor || !ano || !genero || !sinopse) {
+    //     alertMessage.textContent = 'Por favor, preencha todos os campos!';
+    //     customAlert.style.display = 'flex';
+    //     return;
+    // }
 
     // Criar um objeto livro
     const newBook = {
         titulo: titulo,
         autor: autor,
-        ano: ano,
+        data: data,
         genero: genero,
         sinopse: sinopse
     };
