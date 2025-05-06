@@ -1,3 +1,5 @@
+// import { APIURL } from "./global";
+
 const wrapper = document.querySelector('.wrapper');
 const loginLink = document.querySelector('.login-link');
 const registerLink = document.querySelector('.register-link');
@@ -75,15 +77,21 @@ registerForm.addEventListener('submit', (e) => {
 
     // Criar um objeto usuário
     const newUser  = {
-        username: username,
-        nome: nome,
-        email: email,
-        senha: senha,
-        confirmaSenha: senha
+        email:email,
+        password:senha,
+        password_confirmation:senha,
+        nome:nome,
+        username:username
     };
 
-    realizarRequisicaoAPI('POST', `${window.APIURL}/registrar`, newUser )
+    realizarRequisicaoAPI('POST', `http://localhost:15000/auth/registrar`, newUser )
+
         .then(data => {
+            if (data.status === 'error') {
+                // console.error('Erro ao registrar usuário:', error);
+                alertMessage.textContent = 'Ocorreu um erro ao registrar o usuário.';
+                customAlert.style.display = 'flex';
+            }
             console.log(data); 
             alertMessage.textContent = 'Usuário cadastrado com sucesso!';
             customAlert.style.display = 'flex';
