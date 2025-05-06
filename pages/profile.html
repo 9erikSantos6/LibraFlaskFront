@@ -13,7 +13,7 @@
     <div class="modal" id="customAlert">
         <div class="modal-content">
             <span class="close-btn" id="closeAlert"></span>
-            <h2 id="alertMessage">Livro adicionado com sucesso!</h2>
+            <h2 id="alertMessage">Perfil atualizado com sucesso!</h2>
             <button id="closeModalBtn">Fechar</button>
         </div>
     </div>
@@ -59,26 +59,26 @@
             <ion-icon name="close"></ion-icon>
         </span>
         <div class="form-box add">
-            <h2>Perfil</h2>
-            <form action="#">
+            <h2>Editar Perfil</h2>
+            <form id="editForm">
                 <div class="input-box">
                     <span class="icon"><ion-icon name="create-outline"></ion-icon></span>
-                    <input type="text" required placeholder="">
+                    <input type="text" id="username" required placeholder="">
                     <label>Nome de Usuário</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="create-outline"></ion-icon></span>
-                    <input type="text" required placeholder="">
+                    <input type="text" id="name" placeholder="">
                     <label>Nome</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="create-outline"></ion-icon></span>
-                    <input type="email" required placeholder="">
+                    <input type="email" id="email" required placeholder="">
                     <label>Email</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="create-outline"></ion-icon></span>
-                    <input type="password" required placeholder="">
+                    <input type="password" id="password" required placeholder="">
                     <label>Trocar Senha</label>
                 </div>
                 <div class="button-container">
@@ -88,9 +88,15 @@
             </form>
         </div>
     </div>
+
+    <!-- <div class="user-info">
+        <h2>Informações do Usuário</h2>
+        <p><strong>Nome de Usuário:</strong> <span id="displayUsername">usuario123</span></p>
+        <p><strong>Email:</strong> <span id="displayEmail">usuario@example.com</span></p>
+    </div> -->
     
 
-    <script src="../assets/js/addscript.js"></script>
+    <script src="../assets/js/profilescript.js"></script>
     <script src="../assets/js/function.js"></script>
     <script src="../assets/js/sidebarscript.js"></script>
 

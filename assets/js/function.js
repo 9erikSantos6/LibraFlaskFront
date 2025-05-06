@@ -44,6 +44,7 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
+
 async function realizarRequisicaoAPI(method, url, body = null, token = null) {
     let opcoes = {
         method: method,
@@ -71,5 +72,12 @@ async function realizarRequisicaoAPI(method, url, body = null, token = null) {
     } catch (erro) {
         console.error('Erro', erro);
         return null;
+    }
+}
+
+
+function salvarAuthToken(data) {
+    if (data.auth_token) {
+        localStorage.setItem('auth_token', data.auth_token);
     }
 }
