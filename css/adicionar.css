@@ -1,3 +1,16 @@
+@media (max-width: 600px) {
+    .wrapper-add {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .wrapper-add .form-box.add {
+        padding: 20px;
+    }
+}
+
+
 body {
     background: url(../img/Escritorio3.jpg) no-repeat;
     background-size: cover;
@@ -69,6 +82,7 @@ body {
     border-bottom: 2px solid #fff;
     margin: 30px 0;
 }
+
 
 .wrapper-add .input-box label {
     position: absolute;

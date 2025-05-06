@@ -1,5 +1,5 @@
 // Selecionando os elementos
-const loginForm = document.querySelector('.login-form');
+const loginForm = document.querySelector('.login-form'); // Certifique-se de que a classe está correta
 const emailInput = document.querySelector('input[type="email"]');
 const passwordInput = document.querySelector('input[type="password"]');
 const loginBtn = document.querySelector('.btn');
@@ -11,8 +11,6 @@ const closeAlert = document.getElementById('closeAlert');
 const closeModalBtn = document.getElementById('closeModalBtn');
 const alertMessage = document.getElementById('alertMessage');
 
-
-
 // Função que lida com o login
 function handleLogin(e) {
     e.preventDefault();
@@ -20,7 +18,7 @@ function handleLogin(e) {
     console.log('botao de login clicado');
 
     const userCredentials = {
-        email:  emailInput.value,
+        email: emailInput.value,
         password: passwordInput.value
     }
 
@@ -34,25 +32,23 @@ function handleLogin(e) {
             .then(data => {
                 console.log(data);
                 /*
-
                     A API responde com 200 e token de atutenticação:
                     {
                         "auth_token": "<user_thoken>"
                     }
-
                 */
             })
-            .then(error => {
+            // .then(error =>
+            .catch(error => {
                 console.error(error);
                 // OUTRAS LOGICAS...
-            })
+            });
         return;
     }
-
 }
 
 // Adicionando o evento submit ao formulário de login
-// loginForm.addEventListener('submit', handleLogin);
+loginForm.addEventListener('submit', handleLogin); // Descomentada
 
 // Fechar o alerta do modal
 closeAlert.addEventListener('click', () => {
@@ -63,32 +59,3 @@ closeAlert.addEventListener('click', () => {
 closeModalBtn.addEventListener('click', () => {
     customAlert.style.display = 'none'; // Esconde o modal
 });
-
-
-
-
-// Verificar se o usuário existe
-    // const users = getUsers();
-    // const user = users.find(u => u.email === email);
-
-    // if (!user) {
-    //     alertMessage.textContent = 'Este e-mail não está cadastrado!';
-    //     customAlert.style.display = 'flex'; // Exibe o alerta
-    //     return;
-    // }
-
-    // Verificar se a senha está correta
-    // if (user.senha !== password) {
-    //     alertMessage.textContent = 'Senha incorreta. Tente novamente.';
-    //     customAlert.style.display = 'flex';
-    //     return;
-    // }
-
-    // Se tudo estiver correto
-    // alertMessage.textContent = 'Login realizado com sucesso!';
-    // customAlert.style.display = 'flex';
-    // Fechar a tela de login
-    // wrapper.style.display = 'none';
-
-    // Mudar o texto do botão para "Logado"
-    // loginBtn.textContent = 'Logado';

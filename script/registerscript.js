@@ -16,28 +16,32 @@ const alertMessage = document.getElementById('alertMessage');
 registerLink.addEventListener('click', () => {
     wrapper.classList.add('active');
 });
+
 // Voltar para a tela de login
 loginLink.addEventListener('click', () => {
     wrapper.classList.remove('active');
 });
+
 // Mostrar o popup
 btnPopup.addEventListener('click', () => {
     wrapper.classList.add('active-popup');
     wrap.style.display = 'none';
 });
+
 // Fechar o popup
 iconClose.addEventListener('click', () => {
     wrapper.classList.remove('active-popup');
     wrap.style.display = 'block';
 });
+
 // Fecha popup ao clicar na overlay
 registerOverlay.addEventListener('click', () => {
     wrapper.classList.remove('active-popup');
     wrap.style.display = 'block';
 });
+
 // Fecha popup se clicar fora dele
 document.addEventListener('click', (e) => {
-    // Fecha popup se clicar fora dele
     const isClickInsidePopup = wrapper.contains(e.target) || btnPopup.contains(e.target);
     const isClickInsideAlert = customAlert.contains(e.target);
     if (!isClickInsidePopup && !btnPopup.contains(e.target) && !isClickInsideAlert) {
@@ -47,16 +51,16 @@ document.addEventListener('click', (e) => {
 });
 
 // Envio do formulário de registro
-const registerForm = document.querySelector('registerForm');
+const registerForm = document.querySelector('.register-form'); // Corrigido para usar a classe
 const usuarioInput = document.getElementById('usuarioInput');
 registerForm.addEventListener('submit', (e) => {
     e.preventDefault(); // Previne o envio padrão
 
     // Obter os valores dos campos do formulário
-    const nome = document.getElementById('registerName').value; // Obter o valor do campo de nome
-    const email = document.getElementById('registerEmail').value; // Obter o valor do campo de e-mail
-    const senha = document.getElementById('registerPassword').value; // Obter o valor do campo de senha
-    const termos = registerForm.querySelector('input[type="checkbox"]'); // Acessando o campo de termos de serviço
+    const nome = document.getElementById('nameRegister').value;
+    const email = document.getElementById('emailRegister').value;
+    const senha = document.getElementById('passwordRegister').value;
+    const termos = registerForm.querySelector('input[type="checkbox"]');
 
     // Verificar se aceitou os termos
     if (!termos.checked) {
@@ -65,47 +69,25 @@ registerForm.addEventListener('submit', (e) => {
         return;
     }
 
-
     // Gera um nome de usuário automaticamente com base no nome
     const username = nome.toLowerCase().replace(/\s+/g, '') + Math.floor(Math.random() * 1000);
     usuarioInput.value = username; 
 
-
     // Criar um objeto usuário
-    const newUser = {
+    const newUser  = {
         username: username,
         nome: nome,
         email: email,
         senha: senha,
         confirmaSenha: senha
     };
-    // console.log(newUser);
 
-    realizarRequisicaoAPI('POST', `${APIUR}/registrar`, newUser)
+    realizarRequisicaoAPI('POST', `${APIUR}/registrar`, newUser )
         .then(data => {
             console.log(data); 
-            /*
-             A API responde com status 200:
-
-                {
-                    "message": "Usuário registrado com sucesso",
-                    "user": {
-                        "email": "<e-mail do user>",
-                        "nome": "<nome do user>",
-                        "username": "<username do user"
-                    }
-                }
-
-             */
-
-             // Exibe uma mensagem personalizada no modal
             alertMessage.textContent = 'Usuário cadastrado com sucesso!';
             customAlert.style.display = 'flex';
-
-            // Limpar o formulário
             registerForm.reset();
-
-            // Fechar a tela de registro
             wrapper.classList.remove('active');
         })
         .catch(error => {
@@ -124,15 +106,6 @@ closeAlert.addEventListener('click', () => {
 closeModalBtn.addEventListener('click', () => {
     customAlert.style.display = 'none'; // Esconde o modal
 });
-
-
-
-
-
-
-
-
-
 
 
 

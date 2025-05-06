@@ -14,7 +14,7 @@ const alertMessage = document.getElementById('alertMessage');
 openBtn.addEventListener('click', () => {
     wrapperAdd.classList.add('active-popup'); // Adiciona a classe para abrir a janela
     wrapperAdd.classList.add('active'); // Adiciona a classe para expandir a altura
-    confirmBtn.disabled = false;// Habilitar o botão de enviar
+    confirmBtn.disabled = false; // Habilitar o botão de enviar
 });
 
 // Fechar a janela
@@ -47,11 +47,11 @@ form.addEventListener('submit', (e) => {
     const sinopse = document.getElementById('sinopse').value;
 
     // Verificar se todos os campos foram preenchidos
-    // if (!titulo || !autor || !ano || !genero || !sinopse) {
-    //     alertMessage.textContent = 'Por favor, preencha todos os campos!';
-    //     customAlert.style.display = 'flex';
-    //     return;
-    // }
+    if (!titulo || !autor || !data || !genero || !sinopse) { // Corrigido para 'data'
+        alertMessage.textContent = 'Por favor, preencha todos os campos!';
+        customAlert.style.display = 'flex';
+        return;
+    }
 
     // Criar um objeto livro
     const newBook = {
@@ -67,31 +67,17 @@ form.addEventListener('submit', (e) => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            // 'Authorization': 
         },
         body: JSON.stringify(newBook)
     })
-
-
-
-
-
-
-
-    
-
-
-
     .then(response => response.json()) // Espera a resposta em JSON
     .then(data => {
         // Exibe a mensagem personalizada de sucesso
         alertMessage.textContent = 'Livro adicionado com sucesso!';
         customAlert.style.display = 'flex';
-
         // Fechar a janela após o envio
         wrapperAdd.classList.remove('active-popup');
         wrapperAdd.classList.remove('active');
-
         // Limpar o formulário após o envio
         form.reset();
     })
@@ -99,13 +85,14 @@ form.addEventListener('submit', (e) => {
         console.error('Erro ao adicionar livro:', error);
         alertMessage.textContent = 'Ocorreu um erro ao adicionar o livro.';
         customAlert.style.display = 'flex';
+    })
+    .finally(() => {
+        // Habilitar o botão de envio novamente
+        confirmBtn.disabled = false;
     });
-
-    // Desabilitar o botão de envio após o primeiro envio
-    confirmBtn.disabled = false;
 });
 
-
+// Formatação da data
 document.getElementById("data").addEventListener("input", function(e) {
     let data = e.target.value.replace(/\D/g, '');
     if (data.length > 2 && data.length <= 4) {
@@ -115,27 +102,6 @@ document.getElementById("data").addEventListener("input", function(e) {
     }
     e.target.value = data;
 });
-
-    // Salvar os dados no localStorage
-    // saveBookData(newBook);
-
-    // Exibe uma mensagem personalizada
-    // alertMessage.textContent = 'Livro adicionado com sucesso!';
-    // customAlert.style.display = 'flex';
-
-    // Desabilitar o botão de envio após o primeiro envio
-    // confirmBtn.disabled = true;
-
-    // Fechar a janela após o envio
-    // wrapperAdd.classList.remove('active-popup');
-    // wrapperAdd.classList.remove('active');
-
-    // Limpar o formulário após o envio
-    // form.reset();
-
-    // Habilitar o botão de envio novamente após limpar o formulário
-    // confirmBtn.disabled = false;
-
 
 // Botão Cancelar: Limpar formulário e fechar a janela
 cancelBtn.addEventListener('click', () => {
