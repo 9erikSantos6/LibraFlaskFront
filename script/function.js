@@ -43,3 +43,33 @@ function isValidEmail(email) {
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     return emailRegex.test(email);
 }
+
+async function realizarRequisicaoAPI(method, url, body = null, token = null) {
+    let opcoes = {
+        method: method,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
+
+    if (token) {
+        opcoes.headers['Authorization'] = `Bearer ${token}`;
+    }
+
+    if (body && method !== 'GET') {
+        opcoes.body = JSON.stringify(body);
+    }
+
+    try {
+        const resposta = await fetch(url, opcoes);
+        if (!resposta.ok) {
+            const textoErro = await resposta.text();
+            throw new Error(`Erro de requisição! Status: ${resposta.status} - ${textoErro}`);
+        }
+        const texto = await resposta.text();
+        return texto ? JSON.parse(texto) : null;
+    } catch (erro) {
+        console.error('Erro', erro);
+        return null;
+    }
+}

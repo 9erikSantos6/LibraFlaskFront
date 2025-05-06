@@ -63,13 +63,25 @@ form.addEventListener('submit', (e) => {
     };
 
     // Enviar os dados para o backend (API Flask)
-    fetch('/livros', {
+    fetch('http://localhost:15000/livros', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
+            // 'Authorization': 
         },
         body: JSON.stringify(newBook)
     })
+
+
+
+
+
+
+
+    
+
+
+
     .then(response => response.json()) // Espera a resposta em JSON
     .then(data => {
         // Exibe a mensagem personalizada de sucesso
