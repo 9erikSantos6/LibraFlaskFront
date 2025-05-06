@@ -1,6 +1,6 @@
 // Função para salvar o livro no localStorage
 function saveBookData(book) {
-    let books = JSON.parse(localStorage.getItem('books')) || [];
+    const books = JSON.parse(localStorage.getItem('books')) || [];
     books.push(book);
     localStorage.setItem('books', JSON.stringify(books));
 }
@@ -17,7 +17,7 @@ function clearBooks() {
 
 // Função para salvar o usuário
 function saveUserData(user) {
-    let users = JSON.parse(localStorage.getItem('users')) || [];
+    const users = JSON.parse(localStorage.getItem('users')) || [];
     users.push(user);
     localStorage.setItem('users', JSON.stringify(users));
 }
@@ -45,7 +45,7 @@ function isValidEmail(email) {
 }
 
 async function realizarRequisicaoAPI(method, url, body = null, token = null) {
-    let opcoes = {
+    const opcoes = {
         method: method,
         headers: {
             'Content-Type': 'application/json'
@@ -53,7 +53,7 @@ async function realizarRequisicaoAPI(method, url, body = null, token = null) {
     };
 
     if (token) {
-        opcoes.headers['Authorization'] = `Bearer ${token}`;
+        opcoes.headers.Authorization = `Bearer ${token}`;
     }
 
     if (body && method !== 'GET') {

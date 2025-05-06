@@ -82,7 +82,7 @@ registerForm.addEventListener('submit', (e) => {
         confirmaSenha: senha
     };
 
-    realizarRequisicaoAPI('POST', `${APIUR}/registrar`, newUser )
+    realizarRequisicaoAPI('POST', `${window.APIURL}/registrar`, newUser )
         .then(data => {
             console.log(data); 
             alertMessage.textContent = 'Usuário cadastrado com sucesso!';
