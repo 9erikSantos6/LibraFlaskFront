@@ -10,8 +10,8 @@ const closeAlert = document.getElementById('closeAlert');
 const closeModalBtn = document.getElementById('closeModalBtn');
 const alertMessage = document.getElementById('alertMessage');
 
-// Função que lida com o login
-function handleLogin(e) {
+// Adicionando o evento submit ao formulário de login
+loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     console.log('botao de login clicado');
@@ -57,11 +57,7 @@ function handleLogin(e) {
             alertMessage.textContent = 'Erro ao realizar login!';
             customAlert.style.display = 'flex';
         });
-}
-
-
-// Adicionando o evento submit ao formulário de login
-loginForm.addEventListener('submit', handleLogin); // Descomentada
+})
 
 // Fechar o alerta do modal
 closeAlert.addEventListener('click', () => {

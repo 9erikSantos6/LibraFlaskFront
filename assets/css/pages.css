@@ -1,4 +1,4 @@
-.wrapper {
+.wrapper-auth {
     position: relative;
     width: 400px;
     height: 450px;
@@ -16,42 +16,42 @@
     margin-top: 5px;
 }
   
-.wrapper.active-popup {
+.wrapper-auth.active-popup {
     transform: scale(1);
 }
   
-.wrapper.active {
+.wrapper-auth.active {
     height: 500px;
 }
   
-.wrapper .form-box {
+.wrapper-auth .form-box {
     width: 100%;
     padding: 30px;
 }
   
-.wrapper .form-box.login {
+.wrapper-auth .form-box.login {
     transition: transform .18s ease;
     transform: translateX(0);
 }
   
-.wrapper.active .form-box.login {
+.wrapper-auth.active .form-box.login {
     transition: none;
     transform: translateX(-400px);
 }
   
-.wrapper .form-box.register {
+.wrapper-auth .form-box.register {
     margin-top: 30px;
     position: absolute;
     transition: none;
     transform: translateX(400px);
 }
   
-  .wrapper.active .form-box.register {
+.wrapper-auth.active .form-box.register {
     transition: transform .18s ease;
     transform: translateX(0);
 }
   
-.wrapper .icon-close {
+.wrapper-auth .icon-close {
     position: absolute;
     top: 0;
     right: 0;

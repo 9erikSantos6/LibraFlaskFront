@@ -1,54 +1,46 @@
 // import { APIURL } from "./global";
 
-const wrapper = document.querySelector('.wrapper');
+const wrapperAuth = document.querySelector('.wrapper-auth');
 const loginLink = document.querySelector('.login-link');
 const registerLink = document.querySelector('.register-link');
 const btnPopup = document.querySelector('.btnLogin-popup');
 const iconClose = document.querySelector('.icon-close');
 const registerOverlay = document.querySelector('.overlay');
-const wrap = document.querySelector('.wrap');
 
-// Modal de sucesso
-const customAlert = document.getElementById('customAlert');
-const closeAlert = document.getElementById('closeAlert');
-const closeModalBtn = document.getElementById('closeModalBtn');
-const alertMessage = document.getElementById('alertMessage');
 
 // Abrir a tela de registro
 registerLink.addEventListener('click', () => {
-    wrapper.classList.add('active');
+    wrapperAuth.classList.add('active');
 });
 
 // Voltar para a tela de login
 loginLink.addEventListener('click', () => {
-    wrapper.classList.remove('active');
+    wrapperAuth.classList.remove('active');
 });
 
 // Mostrar o popup
 btnPopup.addEventListener('click', () => {
-    wrapper.classList.add('active-popup');
-    wrap.style.display = 'none';
+    wrapperAuth.classList.add('active-popup');
 });
 
 // Fechar o popup
 iconClose.addEventListener('click', () => {
-    wrapper.classList.remove('active-popup');
-    wrap.style.display = 'block';
+    wrapperAuth.classList.remove('active-popup');
+
 });
 
 // Fecha popup ao clicar na overlay
 registerOverlay.addEventListener('click', () => {
-    wrapper.classList.remove('active-popup');
-    wrap.style.display = 'block';
+    wrapperAuth.classList.remove('active-popup');
+
 });
 
 // Fecha popup se clicar fora dele
 document.addEventListener('click', (e) => {
-    const isClickInsidePopup = wrapper.contains(e.target) || btnPopup.contains(e.target);
+    const isClickInsidePopup = wrapperAuth.contains(e.target) || btnPopup.contains(e.target);
     const isClickInsideAlert = customAlert.contains(e.target);
     if (!isClickInsidePopup && !btnPopup.contains(e.target) && !isClickInsideAlert) {
-        wrapper.classList.remove('active-popup');
-        wrap.style.display = 'block';
+        wrapperAuth.classList.remove('active-popup');
     }
 });
 
@@ -96,7 +88,7 @@ registerForm.addEventListener('submit', (e) => {
             alertMessage.textContent = 'Usuário cadastrado com sucesso!';
             customAlert.style.display = 'flex';
             registerForm.reset();
-            wrapper.classList.remove('active');
+            wrapperAuth.classList.remove('active');
         })
         .catch(error => {
             console.error('Erro ao registrar usuário:', error);

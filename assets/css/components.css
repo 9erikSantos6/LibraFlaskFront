@@ -68,7 +68,7 @@
   display: none;
 }
 
-.wrapper.active-popup ~ .overlay {
+.wrapper-auth.active-popup ~ .overlay {
   display: block;
 }
 

@@ -54,7 +54,7 @@
   </header>
 
   <div class="overlay"></div>
-  <div class="wrapper">
+  <div class="wrapper-auth">
     <span class="icon-close"><ion-icon name="close"></ion-icon></span>
 
     <div class="form-box login">
@@ -63,12 +63,12 @@
       <form action="javascript:void(0);" class="login-form">
         <div class="input-box">
           <span class="icon"><ion-icon name="mail"></ion-icon></span>
-          <input type="email" id="emailLogin" required placeholder="">
+          <input type="email" id="emailLogin" required placeholder="" autocomplete="email">
           <label>Email</label>
         </div>
         <div class="input-box">
           <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-          <input type="password" id="passwordLogin" placeholder="">
+          <input type="password" id="passwordLogin" placeholder="" autocomplete="current-password">
           <label>Senha</label>
         </div>
         <div class="remember-forgot">
@@ -94,12 +94,12 @@
         </div>
         <div class="input-box">
           <span class="icon"><ion-icon name="mail"></ion-icon></span>
-          <input type="email" id="emailRegister" required placeholder="">
+          <input type="email" id="emailRegister" required placeholder="" autocomplete="email">
           <label>Email</label>
         </div>
         <div class="input-box">
           <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-          <input type="password" id="passwordRegister" required placeholder="">
+          <input type="password" id="passwordRegister" required placeholder="" autocomplete="new-password">
           <label>Senha</label>
         </div>
         <div class="remember-forgot">
