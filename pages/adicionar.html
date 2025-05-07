@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adicionar Livro</title>
-  <link rel="stylesheet" href="../assets/css/main.css">
-  <link rel="stylesheet" href="../assets/css/adicionar.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Livro</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/adicionar.css">
 </head>
+
 <body>
-    
+
     <div class="modal" id="customAlert">
         <div class="modal-content">
             <span class="close-btn" id="closeAlert"></span>
@@ -26,33 +28,33 @@
         <div class="close-toggle" id="closeToggle">
             <ion-icon name="close"></ion-icon>
         </div>
-        
+
         <nav class="sidebar" id="sidebar">
-          <ul>
-            <li><a href="./profile.html">Meu Perfil</a></li>
-            <li><a href="#">Favoritos</a></li>
-            <li><a href="./adicionar.html">Adicionar Livro</a></li>
-            <li><a href="#">Configurações de Conta</a></li>
-            <li><a href="#">Sair</a></li>
-          </ul>
+            <ul>
+                <li><a href="./profile.html">Meu Perfil</a></li>
+                <li><a href="#">Favoritos</a></li>
+                <li><a href="./adicionar.html">Adicionar Livro</a></li>
+                <li><a href="#">Configurações de Conta</a></li>
+                <li><a href="#">Sair</a></li>
+            </ul>
         </nav>
-    
+
         <a href="../index.html" class="logo">Biblioteca</a>
-        
+
         <div class="search-box">
-          <input type="text" placeholder="Pesquisar...">
-          <i class="icon"><ion-icon name="search-outline"></ion-icon></i>
+            <input type="text" placeholder="Pesquisar...">
+            <i class="icon"><ion-icon name="search-outline"></ion-icon></i>
         </div>
-        
+
         <nav class="navigation">
-          <a href="#">Menu</a>
-          <a href="#">Sobre</a>
-          <a href="#">Serviços</a>
-          <a href="#">Contato</a>
-          <button class="btnAdd-popup">Adicionar</button>
+            <a href="#">Menu</a>
+            <a href="#">Sobre</a>
+            <a href="#">Serviços</a>
+            <a href="#">Contato</a>
+            <button class="btnAdd-popup">Adicionar</button>
         </nav>
     </header>
-    
+
     <div class="overlay"></div>
     <div class="wrapper-add">
         <span class="icon-close-add">
@@ -62,7 +64,7 @@
             <h2>Adicionar Livro</h2>
             <form action="#">
                 <div class="input-box">
-                    <input type="text" id ="titulo" required placeholder="">
+                    <input type="text" id="titulo" required placeholder="">
                     <label>Título</label>
                 </div>
                 <div class="input-box">
@@ -88,7 +90,7 @@
             </form>
         </div>
     </div>
-    
+
 
     <script src="../assets/js/addscript.js"></script>
     <script src="../assets/js/function.js"></script>
@@ -97,4 +99,5 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>
