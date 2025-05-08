@@ -1,12 +1,10 @@
 import { customModalAlert } from './dom.js';
 import { API_ENDPOINTS } from './constants.js';
 
-
-const loginForm = document.querySelector('.login-form'); // Certifique-se de que a classe está correta
+const loginForm = document.querySelector('.login-form');
 const emailInput = document.querySelector('input[type="email"]');
 const passwordInput = document.querySelector('input[type="password"]');
-const loginBtn = document.querySelector('.btn');
-const wrapper = document.querySelector('.wrapper');
+const wrapperAuth = document.querySelector('.wrapper-auth');
 
 
 // Adicionando o evento submit ao formulário de login
@@ -30,25 +28,19 @@ loginForm.addEventListener('submit', (e) => {
     realizarRequisicaoAPI('POST', API_ENDPOINTS.LOGIN, userCredentials)
         .then(data => {
             if (data.status === 'error') {
-                // LOGICA PARA AVISAR QUE DEU ERRO...
                 console.log("Deu merda no login");
                 customModalAlert.abrirModal('Erro ao realizar login', 'Fechar');
+                return;
             }
-            /*
-                A API responde com 200 e token de atutenticação:
-                {
-                    "auth_token": "<user_thoken>"
-                }
-            */
-            console.log(data);
-            customModalAlert.abrirModal('Usuário logado com sucesso!', 'Fechar');
+            if (salvarAuthToken(data)) {
+                customModalAlert.abrirModal('Usuário logado com sucesso!', 'Fechar');
+            }
             loginForm.reset();
-            wrapper.classList.remove('active');
-            salvarAuthToken(data);
+            wrapperAuth.classList.remove('active');
         })
         // .then(error =>
         .catch(error => {
-            console.error('Erro ao logar usuário: ', error);
+            console.error(error);
             customModalAlert.abrirModal('Erro ao realizar login', 'Fechar');
         });
 });

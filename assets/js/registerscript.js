@@ -77,8 +77,7 @@ registerForm.addEventListener('submit', (e) => {
         username:username
     };
 
-    realizarRequisicaoAPI('POST', API_ENDPOINTS.REGISTER, newUser )
-
+    realizarRequisicaoAPI('POST', API_ENDPOINTS.REGISTER, newUser)
         .then(data => {
             if (data.status === 'error') {
                 // console.error('Erro ao registrar usuário:', error);
@@ -90,7 +89,7 @@ registerForm.addEventListener('submit', (e) => {
             wrapperAuth.classList.remove('active');
         })
         .catch(error => {
-            console.error('Erro ao registrar usuário:', error);
+            console.error(error);
             customModalAlert.abrirModal('Erro ao registrar usuário', 'Fechar');
         });   
 });

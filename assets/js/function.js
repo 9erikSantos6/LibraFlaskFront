@@ -70,7 +70,7 @@ async function realizarRequisicaoAPI(method, url, body = null, token = null) {
         const texto = await resposta.text();
         return texto ? JSON.parse(texto) : null;
     } catch (erro) {
-        console.error('Erro', erro);
+        console.error(erro);
         return null;
     }
 }
@@ -79,5 +79,11 @@ async function realizarRequisicaoAPI(method, url, body = null, token = null) {
 function salvarAuthToken(data) {
     if (data.auth_token) {
         localStorage.setItem('auth_token', data.auth_token);
+        return;
     }
+    throw new Error('Token de autenticação não encontrado na resposta da API.');
+}
+
+function obterAuthToken() {
+    return localStorage.getItem('auth_token');
 }
