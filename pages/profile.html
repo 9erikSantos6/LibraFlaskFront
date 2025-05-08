@@ -6,17 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/profile.css">
+    <link rel="icon" href="../src/assets/icons/favicon.ico" sizes="100x100" type="image/x-icon">
+    <link rel="stylesheet" href="../src/assets/css/main.css">
+    <link rel="stylesheet" href="../src/assets/css/profile.css">
 </head>
 
 <body>
 
-    <div class="modal" id="customAlert">
-        <div class="modal-content">
-            <span class="close-btn" id="closeAlert"></span>
-            <h2 id="alertMessage">Perfil atualizado com sucesso!</h2>
-            <button id="closeModalBtn">Fechar</button>
+    <div class="custom-modal-alert hidden" id="custom-alert" role="dialog" aria-modal="true"
+        aria-labelledby="custom-modal-alert-message">
+        <div class="custom-modal-alert-content">
+            <h2 id="custom-modal-alert-message">Mensagem aqui</h2>
+            <button id="close-custom-modal-alert-btn">Texto botão aqui</button>
         </div>
     </div>
 
@@ -39,7 +40,7 @@
             </ul>
         </nav>
 
-        <a href="../index.html" class="logo">Biblioteca</a>
+        <a href="../index.html" class="logo">LibraFlask</a>
 
         <div class="search-box">
             <input type="text" placeholder="Pesquisar...">
@@ -75,12 +76,13 @@
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="create-outline"></ion-icon></span>
-                    <input type="email" id="email" required placeholder="">
+                    <input type="email" id="email" required placeholder="" autocomplete="email">
                     <label>Email</label>
                 </div>
                 <div class="input-box">
                     <span class="icon"><ion-icon name="create-outline"></ion-icon></span>
-                    <input type="password" id="password" required placeholder="">
+                    <input type="password" id="password" required placeholder="" autocomplete="current-password">
+
                     <label>Trocar Senha</label>
                 </div>
                 <div class="button-container">
@@ -97,10 +99,9 @@
         <p><strong>Email:</strong> <span id="displayEmail">usuario@example.com</span></p>
     </div> -->
 
-
-    <script src="../assets/js/profilescript.js"></script>
-    <script src="../assets/js/function.js"></script>
-    <script src="../assets/js/sidebarscript.js"></script>
+    <script src="../src/js/modules/utils.js" type="module" defer></script>
+    <script src="../src/js/scripts/profilescript.js" type="module" defer></script>
+    <script src="../src/js/scripts/sidebarscript.js" type="module" defer></script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

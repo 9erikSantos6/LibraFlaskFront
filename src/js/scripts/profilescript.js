@@ -5,10 +5,6 @@ const form = document.querySelector('form');
 const cancelBtn = document.querySelector('.btn-cancel');
 const confirmBtn = document.querySelector('.btn-confirm');
 
-const customAlert = document.getElementById('customAlert');
-const closeAlert = document.getElementById('closeAlert');
-const closeModalBtn = document.getElementById('closeModalBtn');
-const alertMessage = document.getElementById('alertMessage');
 
 // Abrir a janela
 openBtn.addEventListener('click', () => {
