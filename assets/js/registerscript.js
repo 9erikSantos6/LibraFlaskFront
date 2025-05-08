@@ -1,5 +1,6 @@
 // import { APIURL } from "./global";
 import { customModalAlert } from './dom.js';
+import { API_ENDPOINTS } from './constants.js';
 
 const wrapperAuth = document.querySelector('.wrapper-auth');
 const loginLink = document.querySelector('.login-link');
@@ -76,7 +77,7 @@ registerForm.addEventListener('submit', (e) => {
         username:username
     };
 
-    realizarRequisicaoAPI('POST', `http://localhost:15000/auth/registrar`, newUser )
+    realizarRequisicaoAPI('POST', API_ENDPOINTS.REGISTER, newUser )
 
         .then(data => {
             if (data.status === 'error') {

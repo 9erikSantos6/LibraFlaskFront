@@ -1,4 +1,5 @@
 import { customModalAlert } from './dom.js';
+import { API_ENDPOINTS } from './constants.js';
 
 
 const loginForm = document.querySelector('.login-form'); // Certifique-se de que a classe está correta
@@ -26,7 +27,7 @@ loginForm.addEventListener('submit', (e) => {
         return;
     }
 
-    realizarRequisicaoAPI('POST', 'http://localhost:15000/auth/login', userCredentials)
+    realizarRequisicaoAPI('POST', API_ENDPOINTS.LOGIN, userCredentials)
         .then(data => {
             if (data.status === 'error') {
                 // LOGICA PARA AVISAR QUE DEU ERRO...
