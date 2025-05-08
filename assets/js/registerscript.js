@@ -1,4 +1,5 @@
 // import { APIURL } from "./global";
+import { customModalAlert } from './dom.js';
 
 const wrapperAuth = document.querySelector('.wrapper-auth');
 const loginLink = document.querySelector('.login-link');
@@ -38,8 +39,7 @@ registerOverlay.addEventListener('click', () => {
 // Fecha popup se clicar fora dele
 document.addEventListener('click', (e) => {
     const isClickInsidePopup = wrapperAuth.contains(e.target) || btnPopup.contains(e.target);
-    const isClickInsideAlert = customAlert.contains(e.target);
-    if (!isClickInsidePopup && !btnPopup.contains(e.target) && !isClickInsideAlert) {
+    if (!isClickInsidePopup && !btnPopup.contains(e.target)) {
         wrapperAuth.classList.remove('active-popup');
     }
 });
@@ -47,6 +47,7 @@ document.addEventListener('click', (e) => {
 // Envio do formulário de registro
 const registerForm = document.querySelector('.register-form'); // Corrigido para usar a classe
 const usuarioInput = document.getElementById('usuarioInput');
+
 registerForm.addEventListener('submit', (e) => {
     e.preventDefault(); // Previne o envio padrão
 
@@ -58,8 +59,7 @@ registerForm.addEventListener('submit', (e) => {
 
     // Verificar se aceitou os termos
     if (!termos.checked) {
-        alertMessage.textContent = 'Você deve aceitar os termos e condições!';
-        customAlert.style.display = 'flex';
+        customModalAlert.abrirModal('Você deve aceitar os termos de uso!', 'Fechar');
         return;
     }
 
@@ -81,33 +81,18 @@ registerForm.addEventListener('submit', (e) => {
         .then(data => {
             if (data.status === 'error') {
                 // console.error('Erro ao registrar usuário:', error);
-                alertMessage.textContent = 'Ocorreu um erro ao registrar o usuário.';
-                customAlert.style.display = 'flex';
+                abrirModal('Erro ao registrar usuário', 'Fechar');
             }
             console.log(data); 
-            alertMessage.textContent = 'Usuário cadastrado com sucesso!';
-            customAlert.style.display = 'flex';
+            customModalAlert.abrirModal('Usuário cadastrado com sucesso!', 'Fechar');
             registerForm.reset();
             wrapperAuth.classList.remove('active');
         })
         .catch(error => {
             console.error('Erro ao registrar usuário:', error);
-            alertMessage.textContent = 'Ocorreu um erro ao registrar o usuário.';
-            customAlert.style.display = 'flex';
+            customModalAlert.abrirModal('Erro ao registrar usuário', 'Fechar');
         });   
 });
-
-// Fechar o alerta do modal
-closeAlert.addEventListener('click', () => {
-    customAlert.style.display = 'none'; // Esconde o modal
-});
-
-// Fechar o alerta com o botão 'Fechar'
-closeModalBtn.addEventListener('click', () => {
-    customAlert.style.display = 'none'; // Esconde o modal
-});
-
-
 
 
 

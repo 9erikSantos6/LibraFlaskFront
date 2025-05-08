@@ -1,22 +1,22 @@
-#customAlert {
-    display: none;
-}
-
-.modal {
-    /* display: none; */
+.custom-modal-alert {
+    display: flex;
     position: fixed;
     z-index: 9999;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* leve escurecido */
-    display: flex;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* leve escurecido */
     justify-content: center;
     align-items: center;
 }
 
-.modal-content {
+.hidden {
+    display: none !important;
+}
+
+.custom-modal-alert-content {
     backdrop-filter: blur(20px);
     background: transparent;
     color: white;
@@ -24,16 +24,16 @@
     border-radius: 20px;
     text-align: center;
     width: 300px;
-    border: 2px solid rgba(255, 255, 255, .5);
-    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
-.modal-content h2 {
+.custom-modal-alert-content h2 {
     font-size: 1.5em;
     color: white;
 }
 
-.modal-content button {
+.custom-modal-alert-content button {
     padding: 10px 20px;
     background-color: #fff;
     color: #000;
@@ -45,10 +45,10 @@
     font-weight: 600;
 }
 
-.modal-content button:hover {
+.custom-modal-alert-content button:hover {
     background-color: #e0e0e0;
 }
 
-.close-btn:hover {
+.custom-modal-alert-close-btn:hover {
     color: #ccc;
 }
