@@ -7,7 +7,7 @@ import * as utils from '../modules/utils.js';
 const wrapperAuth = document.querySelector('.wrapper-auth');
 const loginLink = document.querySelector('.login-link');
 const registerLink = document.querySelector('.register-link');
-const btnPopup = document.querySelector('.btnLogin-popup');
+const btnLogin = document.querySelector('.custom-nav-top-btn');
 const iconClose = document.querySelector('.icon-close');
 const registerOverlay = document.querySelector('.overlay');
 
@@ -23,7 +23,7 @@ loginLink.addEventListener('click', () => {
 });
 
 // Mostrar o popup
-btnPopup.addEventListener('click', () => {
+btnLogin.addEventListener('click', () => {
     wrapperAuth.classList.add('active-popup');
 });
 
@@ -41,8 +41,8 @@ registerOverlay.addEventListener('click', () => {
 
 // Fecha popup se clicar fora dele
 document.addEventListener('click', (e) => {
-    const isClickInsidePopup = wrapperAuth.contains(e.target) || btnPopup.contains(e.target);
-    if (!isClickInsidePopup && !btnPopup.contains(e.target)) {
+    const isClickInsidePopup = wrapperAuth.contains(e.target) || btnLogin.contains(e.target);
+    if (!isClickInsidePopup && !btnLogin.contains(e.target)) {
         wrapperAuth.classList.remove('active-popup');
     }
 });

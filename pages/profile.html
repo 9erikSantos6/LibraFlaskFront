@@ -21,38 +21,45 @@
         </div>
     </div>
 
+    <!-- Sidebar -->
     <header>
-
-        <div class="menu-toggle" id="menuToggle">
+        <!-- Botão para abrir o menu lateral -->
+        <div class="sidebar-open-btn" id="openSidebarBtn">
             <ion-icon name="menu-outline"></ion-icon>
         </div>
-        <div class="close-toggle" id="closeToggle">
-            <ion-icon name="close"></ion-icon>
+
+        <!-- Botão para fechar o menu lateral -->
+        <div class="sidebar-close-btn" id="closeSidebarBtn">
+            <ion-icon name="close-outline"></ion-icon>
         </div>
 
+        <!-- Menu lateral (Sidebar) -->
         <nav class="sidebar" id="sidebar">
             <ul>
                 <li><a href="./profile.html">Meu Perfil</a></li>
                 <li><a href="#">Favoritos</a></li>
-                <li><a href="./adicionar.html">Adicionar Livro</a></li>
+                <li><a href="./adicionar.html">Adicionar livro</a></li>
                 <li><a href="#">Configurações de Conta</a></li>
                 <li><a href="#">Sair</a></li>
             </ul>
         </nav>
 
+        <!-- Nome/logo do sistema -->
         <a href="../index.html" class="logo">LibraFlask</a>
 
+        <!-- Caixa de pesquisa -->
         <div class="search-box">
             <input type="text" placeholder="Pesquisar...">
             <i class="icon"><ion-icon name="search-outline"></ion-icon></i>
         </div>
 
-        <nav class="navigation">
+        <!-- Navegação do topo -->
+        <nav class="top-navigation">
             <a href="#">Menu</a>
             <a href="#">Sobre</a>
             <a href="#">Serviços</a>
             <a href="#">Contato</a>
-            <button class="btnAdd-popup">Editar Perfil</button>
+            <button class="custom-nav-top-btn">Editar Perfil</button>
         </nav>
     </header>
 
@@ -101,7 +108,7 @@
 
     <script src="../src/js/modules/utils.js" type="module" defer></script>
     <script src="../src/js/scripts/profilescript.js" type="module" defer></script>
-    <script src="../src/js/scripts/sidebarscript.js" type="module" defer></script>
+    <script src="../src/js/scripts/sidebar.js" type="module" defer></script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

@@ -1,6 +1,6 @@
 import { customModalAlert } from '../modules/dom.js';
 
-const openBtn = document.querySelector('.btnAdd-popup');
+const addLivroBtn = document.querySelector('.custom-nav-top-btn');
 const closeBtn = document.querySelector('.icon-close-add');
 const wrapperAdd = document.querySelector('.wrapper-add');
 const form = document.querySelector('form');
@@ -9,7 +9,7 @@ const confirmBtn = document.querySelector('.btn-confirm');
 
 
 // Abrir a janela
-openBtn.addEventListener('click', () => {
+addLivroBtn.addEventListener('click', () => {
     wrapperAdd.classList.add('active-popup'); // Adiciona a classe para abrir a janela
     wrapperAdd.classList.add('active'); // Adiciona a classe para expandir a altura
     confirmBtn.disabled = false; // Habilitar o botão de enviar
@@ -25,7 +25,7 @@ closeBtn.addEventListener('click', () => {
 
 // Fecha a janela se clicar fora
 document.addEventListener('click', (e) => {
-    if (!wrapperAdd.contains(e.target) && !openBtn.contains(e.target)) {
+    if (!wrapperAdd.contains(e.target) && !addLivroBtn.contains(e.target)) {
         wrapperAdd.classList.remove('active-popup');
         wrapperAdd.classList.remove('active');
         form.reset(); // Limpa o formulário

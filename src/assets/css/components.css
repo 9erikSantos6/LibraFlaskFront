@@ -1,4 +1,5 @@
 /* Barra de navegação */
+
 .logo {
   font-size: 2em;
   color: #fff;
@@ -8,7 +9,7 @@
   font-weight: bold;
 }
 
-.navigation a {
+.top-navigation a {
   position: relative;
   font-size: 1.1em;
   color: #fff;
@@ -16,8 +17,8 @@
   font-weight: 500;
   margin-left: 40px;
 }
-  
-.navigation a::after {
+
+.top-navigation a::after {
   content: '';
   position: absolute;
   left: 0;
@@ -30,13 +31,13 @@
   transition: transform .5s;
   transform-origin: right;
 }
-  
-.navigation a:hover::after {
+
+.top-navigation a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
-  
-.navigation .btnLogin-popup {
+
+.top-navigation .btn-login {
   width: 130px;
   height: 50px;
   background: transparent;
@@ -50,8 +51,8 @@
   margin-left: 40px;
   transition: .5s;
 }
-  
-.navigation .btnLogin-popup:hover {
+
+.top-navigation .btn-login:hover {
   background: #fff;
   color: #162938;
 }
@@ -68,12 +69,13 @@
   display: none;
 }
 
-.wrapper-auth.active-popup ~ .overlay {
+.wrapper-auth.active-popup~.overlay {
   display: block;
 }
 
 
 /* Barra de pesquisa */
+
 .search-box {
   position: relative;
   width: 250px;
@@ -111,9 +113,33 @@
 }
 
 
-/* Botão de menu */
-.menu-toggle,
-.close-toggle {
+/* Btnnavigation custom btn */
+
+.custom-nav-top-btn {
+  width: 130px;
+  height: 50px;
+  background: transparent;
+  border: 2px solid #fff;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 500;
+  margin-left: 40px;
+  transition: .5s;
+}
+
+.custom-nav-top-btn:hover {
+  background: #fff;
+  color: #162938;
+}
+
+
+/* Botões de abrir e fechar a sidebar */
+
+.sidebar-open-btn,
+.sidebar-close-btn {
   font-size: 2em;
   color: #fff;
   cursor: pointer;
@@ -124,23 +150,25 @@
   transition: 0.3s;
 }
 
-.menu-toggle {
+.sidebar-open-btn {
   display: block;
 }
 
-.close-toggle {
+.sidebar-close-btn {
   display: none;
 }
 
-.sidebar.active ~ .close-toggle {
+/* Mostra o botão de fechar quando a sidebar está ativa */
+.sidebar.active~.sidebar-close-btn {
   display: block;
 }
 
-.sidebar.active .menu-toggle {
+/* Esconde o botão de abrir quando a sidebar está ativa */
+.sidebar.active .sidebar-open-btn {
   display: none;
 }
 
-/* Sidebar */
+/* Estilo da Sidebar */
 .sidebar {
   position: fixed;
   top: 0;
@@ -162,6 +190,7 @@
 
 .sidebar ul {
   list-style: none;
+  padding: 0;
 }
 
 .sidebar ul li {
