@@ -1,6 +1,8 @@
 // import { APIURL } from "./global";
-import { customModalAlert } from './dom.js';
-import { API_ENDPOINTS } from './constants.js';
+import { customModalAlert } from '../modules/dom.js';
+import { API_ENDPOINTS } from '../constants.js';
+
+import * as utils from '../modules/utils.js';
 
 const wrapperAuth = document.querySelector('.wrapper-auth');
 const loginLink = document.querySelector('.login-link');
@@ -77,7 +79,7 @@ registerForm.addEventListener('submit', (e) => {
         username:username
     };
 
-    realizarRequisicaoAPI('POST', API_ENDPOINTS.REGISTER, newUser)
+    utils.realizarRequisicaoAPI('POST', API_ENDPOINTS.REGISTER, newUser)
         .then(data => {
             if (data.status === 'error') {
                 // console.error('Erro ao registrar usuário:', error);
