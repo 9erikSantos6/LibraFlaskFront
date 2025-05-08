@@ -1,5 +1,5 @@
 body {
-    background: url(../img/Quarto1.jpg) no-repeat;
+    background: url(../img/Quarto1.webp) no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -10,7 +10,7 @@ body {
     background: transparent;
     border: 2px solid #fff;
     outline: none;
-     border-radius: 6px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 1.1em;
     color: #fff;
@@ -86,8 +86,8 @@ body {
     top: -5px;
 }
 
-.wrapper-add .input-box textarea:focus ~ label,
-.wrapper-add .input-box textarea:valid ~ label {
+.wrapper-add .input-box textarea:focus~label,
+.wrapper-add .input-box textarea:valid~label {
     top: -5px;
 }
 
