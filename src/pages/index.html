@@ -6,8 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login & Registration</title>
-  <link rel="stylesheet" href="./src/assets/css/main.css">
-  <link rel="icon" href="./src/assets/icons/favicon.ico" sizes="100x100" type="image/x-icon">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/pages/initial.css">
+  <link rel="icon" href="./favicon.ico" sizes="100x100" type="image/x-icon">
 </head>
 
 <body>
@@ -35,9 +36,9 @@
     <!-- Menu lateral (Sidebar) -->
     <nav class="sidebar" id="sidebar">
       <ul>
-        <li><a href="./pages/profile.html">Meu Perfil</a></li>
+        <li><a href="./profile.html">Meu Perfil</a></li>
         <li><a href="#">Favoritos</a></li>
-        <li><a href="./pages/adicionar.html">Adicionar livro</a></li>
+        <li><a href="./adicionar.html">Adicionar livro</a></li>
         <li><a href="#">Configurações de Conta</a></li>
         <li><a href="#">Sair</a></li>
       </ul>
@@ -64,7 +65,7 @@
 
   <div class="overlay"></div>
   <div class="wrapper-auth">
-    <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+    <span class="icon-close" id="close-wrapper-auth-icon"><ion-icon name="close"></ion-icon></span>
 
     <div class="form-box login">
       <h2>Login</h2>
@@ -72,12 +73,12 @@
       <form action="javascript:void(0);" class="login-form">
         <div class="input-box">
           <span class="icon"><ion-icon name="mail"></ion-icon></span>
-          <input type="email" id="emailLogin" required placeholder="" autocomplete="email">
+          <input type="email" id="login-email" required placeholder="" autocomplete="email">
           <label>Email</label>
         </div>
         <div class="input-box">
           <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-          <input type="password" id="passwordLogin" placeholder="" autocomplete="current-password">
+          <input type="password" id="login-password" placeholder="" autocomplete="current-password">
           <label>Senha</label>
         </div>
         <div class="remember-forgot">
@@ -85,8 +86,8 @@
           <a href="#">Esqueceu sua senha?</a>
         </div>
         <button type="submit" class="btn">Login</button>
-        <div class="login-register">
-          <p>Não tem uma conta?<a class="register-link">Registre-se</a></p>
+        <div class="auth-dialog">
+          <p>Não tem uma conta? <a class="register-link">Registre-se</a></p>
         </div>
       </form>
     </div>
@@ -94,45 +95,41 @@
     <div class="form-box register">
       <h2>Registre-se</h2>
       <form action="#" class="register-form">
-        <input type="hidden" name="usuario" id="usuarioInput">
+        <input type="hidden" name="usuario" id="user-input">
 
         <div class="input-box">
           <span class="icon"><ion-icon name="person"></ion-icon></span>
-          <input type="text" id="nameRegister" required placeholder="">
+          <input type="text" id="registration-name" required placeholder="">
           <label>Nome</label>
         </div>
         <div class="input-box">
           <span class="icon"><ion-icon name="mail"></ion-icon></span>
-          <input type="email" id="emailRegister" required placeholder="" autocomplete="email">
+          <input type="email" id="registration-email" required placeholder="" autocomplete="email">
           <label>Email</label>
         </div>
         <div class="input-box">
           <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
-          <input type="password" id="passwordRegister" required placeholder="" autocomplete="new-password">
+          <input type="password" id="registration-password" required placeholder="" autocomplete="new-password">
           <label>Senha</label>
         </div>
         <div class="remember-forgot">
-          <label for=""><input type="checkbox">Você concorda com os nossos termos e condições?</label>
+          <label for=""><input type="checkbox"> Você concorda com os nossos termos e condições?</label>
         </div>
         <button type="submit" class="btn">Registre-se</button>
-        <div class="login-register">
-          <p>Ja tem uma conta?<a class="login-link">Login</a></p>
+        <div class="auth-dialog">
+          <p>Ja tem uma conta? <a class="login-link">Login</a></p>
         </div>
       </form>
     </div>
   </div>
 
 
-  <script src="./src/js/constants.js" type="module" defer></script>
-  <script src="./src/js/modules/dom.js" type="module" defer></script>
-  <script src="./src/js/scripts/loginscript.js" type="module" defer></script>
-  <script src="./src/js/scripts/registerscript.js" type="module" defer></script>
-  <script src="./src/js/modules/utils.js" type="module" defer></script>
 
-  <script src="./src/js/scripts/sidebar.js" defer></script>
-  <script src="./src/js/scripts/searchscript.js" defer></script>
-  <script src="./src/js/scripts/bookscript.js" defer></script>
+  <script src="../js/components/loginForm.js" type="module" defer></script>
+  <script src="../js/components/registerForm.js" type="module" defer></script>
 
+  <script src="../js/components/wrapperAuth.js" defer></script>
+  <script src="../js/components/sidebar.js" defer></script>
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>

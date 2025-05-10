@@ -1,4 +1,5 @@
-import { customModalAlert } from '../modules/dom.js';
+import { customModalAlert } from './customModal.js';
+import { API_ENDPOINTS, requestAPI } from '../utils/api.js';
 
 const addLivroBtn = document.querySelector('.custom-nav-top-btn');
 const closeBtn = document.querySelector('.icon-close-add');
@@ -59,14 +60,7 @@ form.addEventListener('submit', (e) => {
         sinopse: sinopse
     };
 
-    // Enviar os dados para o backend (API Flask)
-    fetch('http://localhost:15000/livros', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newBook)
-    })
+    requestAPI('POST', API_ENDPOINTS.LIVRO, newBook)
         .then(response => response.json()) // Espera a resposta em JSON
         .then(data => {
             // Exibe a mensagem personalizada de sucesso
@@ -76,9 +70,10 @@ form.addEventListener('submit', (e) => {
             wrapperAdd.classList.remove('active');
             // Limpar o formulário após o envio
             form.reset();
+            console.log('Livro adicionado:\n', data);
         })
         .catch(error => {
-            console.error('Erro ao adicionar livro:', error);
+            console.error(error);
             customModalAlert.abrirModal('correu um erro ao adicionar o livro', 'Fechar');
         })
         .finally(() => {

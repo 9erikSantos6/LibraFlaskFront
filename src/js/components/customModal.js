@@ -1,8 +1,8 @@
-const modal = document.querySelector('.custom-modal-alert');
-const modalMessage = modal.querySelector('#custom-modal-alert-message');
-const modalCloseButton = modal.querySelector('#close-custom-modal-alert-btn');
+export const modal = document.querySelector('.custom-modal-alert');
+export const modalMessage = modal.querySelector('#custom-modal-alert-message');
+export const modalCloseButton = modal.querySelector('#close-custom-modal-alert-btn');
 
-const abrirModal = (message, closeBtnText = 'Fechar') => {
+export const abrirModal = (message, closeBtnText = 'Fechar') => {
     modalMessage.textContent = message;
     modalCloseButton.textContent = closeBtnText;
     modalCloseButton.focus();
@@ -10,7 +10,7 @@ const abrirModal = (message, closeBtnText = 'Fechar') => {
     modal.setAttribute('aria-hidden', 'false');
 }
 
-const fecharModal = () => {
+export const fecharModal = () => {
     modal.classList.add('hidden');
     modal.setAttribute('aria-hidden', 'true');
     modalMessage.textContent = '';

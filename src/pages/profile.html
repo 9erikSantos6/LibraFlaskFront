@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar Livro</title>
-    <link rel="icon" href="../src/assets/icons/favicon.ico" sizes="100x100" type="image/x-icon">
-    <link rel="stylesheet" href="../src/assets/css/main.css">
-    <link rel="stylesheet" href="../src/assets/css/adicionar.css">
+    <title>Perfil</title>
+    <link rel="icon" href="./favicon.ico" sizes="100x100" type="image/x-icon">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pages/profile.css">
 </head>
 
 <body>
@@ -45,7 +45,7 @@
         </nav>
 
         <!-- Nome/logo do sistema -->
-        <a href="../index.html" class="logo">LibraFlask</a>
+        <a href="./index.html" class="logo">LibraFlask</a>
 
         <!-- Caixa de pesquisa -->
         <div class="search-box">
@@ -59,7 +59,7 @@
             <a href="#">Sobre</a>
             <a href="#">Serviços</a>
             <a href="#">Contato</a>
-            <button class="custom-nav-top-btn">Adicionar</button>
+            <button class="custom-nav-top-btn">Editar Perfil</button>
         </nav>
     </header>
 
@@ -69,40 +69,45 @@
             <ion-icon name="close"></ion-icon>
         </span>
         <div class="form-box add">
-            <h2>Adicionar Livro</h2>
-            <form action="#">
+            <h2>Editar Perfil</h2>
+            <form id="editForm">
                 <div class="input-box">
-                    <input type="text" id="titulo" required placeholder="">
-                    <label>Título</label>
+                    <span class="icon"><ion-icon name="create-outline"></ion-icon></span>
+                    <input type="text" id="username" required placeholder="">
+                    <label>Nome de Usuário</label>
                 </div>
                 <div class="input-box">
-                    <input type="text" id="autor" required placeholder="">
-                    <label>Autor</label>
+                    <span class="icon"><ion-icon name="create-outline"></ion-icon></span>
+                    <input type="text" id="name" placeholder="">
+                    <label>Nome</label>
                 </div>
                 <div class="input-box">
-                    <input type="text" id="data" placeholder="">
-                    <label>Ano</label>
+                    <span class="icon"><ion-icon name="create-outline"></ion-icon></span>
+                    <input type="email" id="email" required placeholder="" autocomplete="email">
+                    <label>Email</label>
                 </div>
                 <div class="input-box">
-                    <input type="text" id="genero" required placeholder="">
-                    <label>Gênero</label>
-                </div>
-                <div class="input-box">
-                    <textarea id="sinopse" rows="4" required placeholder=""></textarea>
-                    <label for="sinopse">Sinopse</label>
+                    <span class="icon"><ion-icon name="create-outline"></ion-icon></span>
+                    <input type="password" id="password" required placeholder="" autocomplete="current-password">
+
+                    <label>Trocar Senha</label>
                 </div>
                 <div class="button-container">
                     <button type="button" class="btn-cancel">Cancelar</button>
-                    <button type="submit" class="btn-confirm">Confirmar</button>
+                    <button type="submit" class="btn-confirm">Salvar</button>
                 </div>
             </form>
         </div>
     </div>
 
+    <!-- <div class="user-info">
+        <h2>Informações do Usuário</h2>
+        <p><strong>Nome de Usuário:</strong> <span id="displayUsername">usuario123</span></p>
+        <p><strong>Email:</strong> <span id="displayEmail">usuario@example.com</span></p>
+    </div> -->
 
-    <script src="../src/js/scripts/addLivro.js" type="module" defer></script>
-    <script src="../src/js/modules/utils.js" type="module" defer></script>
-    <script src="../src/js/scripts/sidebar.js" type="module" defer></script>
+    <script src="../js/pages/profilescript.js" type="module" defer></script>
+    <script src="../js/components/sidebar.js" type="module" defer></script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

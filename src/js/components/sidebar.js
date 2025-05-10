@@ -2,7 +2,7 @@ const openBtn = document.getElementById('openSidebarBtn');
 const closeBtn = document.getElementById('closeSidebarBtn');
 const sidebar = document.getElementById('sidebar');
 
-function toggleSidebar(open) {
+const toggleSidebar = (open) => {
     if (open) {
         sidebar.classList.add('active');
         openBtn.style.display = 'none';

@@ -1,0 +1,75 @@
+/* ==================================================
+  [7] - BOTÕES DE ABRIR E FECHAR SIDEBAR
+================================================== */
+.sidebar-open-btn,
+.sidebar-close-btn {
+    font-size: 2em;
+    color: #fff;
+    cursor: pointer;
+    z-index: 101;
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    transition: 0.3s;
+}
+
+.sidebar-open-btn {
+    display: block;
+}
+
+.sidebar-close-btn {
+    display: none;
+}
+
+.sidebar.active~.sidebar-close-btn {
+    display: block;
+}
+
+.sidebar.active .sidebar-open-btn {
+    display: none;
+}
+
+/* ==================================================
+  [8] - SIDEBAR (MENU LATERAL)
+================================================== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 250px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-right: 2px solid rgba(255, 255, 255, .5);
+    box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+    transition: left 0.4s ease;
+    z-index: 98;
+    padding: 60px 20px;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    font-size: 1.1em;
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}

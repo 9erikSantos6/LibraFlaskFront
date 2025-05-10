@@ -1,0 +1,11 @@
+/* ==================================================
+  [1] - LOGO
+================================================== */
+.logo {
+  font-size: 2em;
+  color: #fff;
+  user-select: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+}

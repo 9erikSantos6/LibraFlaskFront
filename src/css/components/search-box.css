@@ -1,0 +1,38 @@
+/* ==================================================
+  [6] - BARRA DE PESQUISA
+================================================== */
+.search-box {
+    position: relative;
+    width: 250px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    background: transparent;
+    color: #fff;
+    font-size: 1em;
+    outline: none;
+    transition: 0.3s;
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-box input:focus {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.search-box .icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1.2em;
+    pointer-events: none;
+}
