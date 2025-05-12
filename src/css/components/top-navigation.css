@@ -32,7 +32,7 @@
     justify-content: center;
     width: auto;
     height: auto;
-    padding: 20px 80px;
+    padding: 20px 45px;
     background: transparent;
     border: 2px solid #fff;
     outline: none;
@@ -43,7 +43,7 @@
     font-weight: 500;
     margin-left: 40px;
     transition: .5s;
-    white-space: nowrap;
+    white-space: pre-line;
     box-sizing: border-box;
 }
 
