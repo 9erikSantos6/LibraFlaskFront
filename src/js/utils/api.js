@@ -25,20 +25,22 @@ export const requestAPI = async (method, url, body = null, token = null) => {
 
     try {
         const resposta = await fetch(url, opcoes);
-        if (!resposta.ok) {
-            const textoErro = await resposta.text();
-            throw new Error(`Erro de requisição! Status: ${resposta.status} - ${textoErro}`);
-        }
         const texto = await resposta.text();
+
+        let data;
         try {
-            return texto ? JSON.parse(texto) : null;
-        } catch (e) {
-            return texto;
+            data = JSON.parse(texto);
+        } catch {
+            data = texto;
         }
-    }
-    catch (erro) {
+
+        return {
+            ok: resposta.ok,
+            status: resposta.status,
+            data
+        };
+    } catch (erro) {
         if (erro instanceof TypeError && erro.message === 'Failed to fetch') {
-            console.error('Erro de rede ou CORS:', erro);
             throw new Error('Não foi possível conectar ao servidor. Verifique sua conexão ou tente novamente mais tarde.');
         }
         throw erro;

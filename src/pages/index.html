@@ -81,10 +81,13 @@
           <input type="password" id="login-password" placeholder="" autocomplete="current-password">
           <label>Senha</label>
         </div>
-        <div class="remember-forgot">
+        <!-- <div class="remember-forgot">
           <label for=""><input type="checkbox">Lembrar-me</label>
-          <a href="#">Esqueceu sua senha?</a>
-        </div>
+
+        </div> -->
+        <a href="#" id="forgot-password-link">Esqueceu sua senha?</a>
+        <br>
+        <br>
         <button type="submit" class="btn">Login</button>
         <div class="auth-dialog">
           <p>Não tem uma conta? <a class="register-link">Registre-se</a></p>
@@ -100,20 +103,26 @@
         <div class="input-box">
           <span class="icon"><ion-icon name="person"></ion-icon></span>
           <input type="text" id="registration-name" required placeholder="">
-          <label>Nome</label>
+          <label for="name">Nome</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="person"></ion-icon></span>
+          <input type="text" id="registration-username" required placeholder="">
+          <label for="username">Username</label>
         </div>
         <div class="input-box">
           <span class="icon"><ion-icon name="mail"></ion-icon></span>
           <input type="email" id="registration-email" required placeholder="" autocomplete="email">
-          <label>Email</label>
+          <label for="email">Email</label>
         </div>
         <div class="input-box">
           <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
           <input type="password" id="registration-password" required placeholder="" autocomplete="new-password">
-          <label>Senha</label>
+          <label for="password">Senha</label>
         </div>
-        <div class="remember-forgot">
-          <label for=""><input type="checkbox"> Você concorda com os nossos termos e condições?</label>
+        <div class="terms-registration">
+          <input type="checkbox" name="accept-terms" id="accept-terms" required>
+          <label for="accept-terms">Você concorda com os nossos termos e condições?</label>
         </div>
         <button type="submit" class="btn">Registre-se</button>
         <div class="auth-dialog">
@@ -135,6 +144,7 @@
   </main>
 
 
+  <noscript>Você precida de JavaScript para rodar essa.</noscript>
   <script src="../js/components/loginForm.js" type="module" defer></script>
   <script src="../js/components/registerForm.js" type="module" defer></script>
 
