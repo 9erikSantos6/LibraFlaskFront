@@ -14,7 +14,7 @@ registerForm.addEventListener('submit', (e) => {
     // Obter os valores dos campos do formulário
     const nome = document.getElementById('registration-name').value;
     const email = document.getElementById('registration-email').value;
-    const senha = document.getElementById('reagistration-password').value;
+    const senha = document.getElementById('registration-password').value;
     const termos = registerForm.querySelector('input[type="checkbox"]');
 
     // Verificar se aceitou os termos
