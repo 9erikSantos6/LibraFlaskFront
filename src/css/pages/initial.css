@@ -1,5 +1,8 @@
 .wrapper-auth {
-    position: relative;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 400px;
     height: 450px;
     background: transparent;
@@ -13,11 +16,11 @@
     overflow: hidden;
     transform: scale(0);
     transition: transform .5s ease, height .2s ease;
-    margin-top: 5px;
+    z-index: 1000;
 }
 
 .wrapper-auth.active-popup {
-    transform: scale(1);
+    transform: scale(1) translate(-50%, -50%);
 }
 
 .wrapper-auth.active {
@@ -173,4 +176,17 @@
 
 input.error {
     border: 2px solid red;
+}
+
+main {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 800px;
+    background-color: #00000096;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 70px 50px;
 }
