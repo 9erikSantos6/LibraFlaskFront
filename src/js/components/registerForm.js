@@ -37,8 +37,8 @@ registerForm.addEventListener('submit', (e) => {
 
     requestAPI('POST', API_ENDPOINTS.REGISTER, newUser)
         .then(data => {
-            if (data.status === 'error') {
-                // console.error('Erro ao registrar usuário:', error);
+            if (data.error) {
+                console.error('Erro ao registrar usuário:\n', error);
                 abrirModal('Erro ao registrar usuário', 'Fechar');
             }
             console.log(data); 
@@ -48,7 +48,7 @@ registerForm.addEventListener('submit', (e) => {
         })
         .catch(error => {
             console.error(error);
-            customModalAlert.abrirModal('Erro ao registrar usuário', 'Fechar');
+            customModalAlert.abrirModal(error.message, 'Fechar');
         });   
 });
 

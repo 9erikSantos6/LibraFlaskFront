@@ -29,8 +29,8 @@ loginForm.addEventListener('submit', (e) => {
     requestAPI('POST', API_ENDPOINTS.LOGIN, userCredentials)
         // .then(res => res.json())
         .then(data => {
-            if (data.status === 'error') {
-                console.log("Deu merda no login");
+            if (data.error) {
+                console.error('Erro ao realizar login:\n', data.error);
                 customModalAlert.abrirModal('Erro ao realizar login', 'Fechar');
                 return;
             }
@@ -40,9 +40,8 @@ loginForm.addEventListener('submit', (e) => {
             loginForm.reset();
             wrapperAuth.classList.remove('active');
         })
-
         .catch(error => {
             console.error(error);
-            customModalAlert.abrirModal('Erro ao realizar login', 'Fechar');
+            customModalAlert.abrirModal(error.message, 'Fechar');
         });
 });
