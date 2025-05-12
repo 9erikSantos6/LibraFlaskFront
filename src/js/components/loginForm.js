@@ -12,7 +12,7 @@ loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const userEmailInput = document.getElementById('login-email');
-    const userPasswordInput = document.querySelector('login-password');
+    const userPasswordInput = document.getElementById('login-password');
 
     const userCredentials = {
         email: userEmailInput.value,
@@ -34,9 +34,8 @@ loginForm.addEventListener('submit', (e) => {
                 customModalAlert.abrirModal('Erro ao realizar login', 'Fechar');
                 return;
             }
-            if (salvarAuthToken(data)) {
-                customModalAlert.abrirModal('Usuário logado com sucesso!', 'Fechar');
-            }
+            salvarAuthToken(data)
+            customModalAlert.abrirModal('Usuário logado com sucesso!', 'Fechar');
             loginForm.reset();
             wrapperAuth.classList.remove('active');
         })
