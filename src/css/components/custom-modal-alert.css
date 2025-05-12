@@ -17,20 +17,26 @@
 }
 
 .custom-modal-alert-content {
+    display: inline-block;
     backdrop-filter: blur(20px);
     background: transparent;
     color: white;
     padding: 30px;
     border-radius: 20px;
     text-align: center;
-    width: 300px;
+    min-width: 300px;
+    max-width: 85vw;
+    width: fit-content;
     border: 2px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    word-wrap: break-word;
+    word-break: break-word;
 }
 
 .custom-modal-alert-content h2 {
     font-size: 1.5em;
     color: white;
+    margin-bottom: 20px;
 }
 
 .custom-modal-alert-content button {

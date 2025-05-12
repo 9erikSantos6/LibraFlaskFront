@@ -18,7 +18,14 @@ export const fecharModal = () => {
     modalCloseButton.blur();
 }
 
-modalCloseButton.addEventListener('click', fecharModal);
+modalCloseButton.addEventListener('click', (e) => {
+    fecharModal();
+    e.stopPropagation();
+});
+
+modal.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
 
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
