@@ -27,18 +27,24 @@
 }
 
 .top-navigation .custom-nav-top-btn {
-    width: 130px;
-    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    padding: 20px 45px;
     background: transparent;
     border: 2px solid #fff;
     outline: none;
-    border-radius: 6px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 1.1em;
     color: #fff;
     font-weight: 500;
     margin-left: 40px;
     transition: .5s;
+    white-space: pre-line;
+    box-sizing: border-box;
 }
 
 .top-navigation .custom-nav-top-btn:hover {

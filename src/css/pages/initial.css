@@ -1,7 +1,13 @@
 .wrapper-auth {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 400px;
-    height: 450px;
+    height: auto;
+    /* height: 450px; */
+    /* min-height: 30vw;
+    max-height: 90vh; */
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
@@ -13,15 +19,17 @@
     overflow: hidden;
     transform: scale(0);
     transition: transform .5s ease, height .2s ease;
-    margin-top: 5px;
+    z-index: 1000;
 }
 
 .wrapper-auth.active-popup {
-    transform: scale(1);
+    transform: scale(1) translate(-50%, -50%);
+    height: auto;
 }
 
 .wrapper-auth.active {
-    height: 500px;
+    /* height: 500px; */
+    height: auto;
 }
 
 .wrapper-auth .form-box {
@@ -40,7 +48,7 @@
 }
 
 .wrapper-auth .form-box.register {
-    margin-top: 30px;
+    /* margin-top: 30px; */
     position: absolute;
     transition: none;
     transform: translateX(400px);
@@ -117,7 +125,7 @@
     line-height: 57px;
 }
 
-.remember-forgot {
+.terms-registration {
     font-size: .9em;
     color: #fff;
     font-weight: 500;
@@ -126,17 +134,17 @@
     justify-content: space-between;
 }
 
-.remember-forgot label input {
+.terms-registration label input {
     accent-color: #fff;
     margin-right: 3px;
 }
 
-.remember-forgot a {
+#forgot-password-link {
     color: #fff;
     text-decoration: none;
 }
 
-.remember-forgot a:hover {
+.terms-registration a:hover {
     text-decoration: underline;
 }
 
@@ -173,4 +181,23 @@
 
 input.error {
     border: 2px solid red;
+}
+
+.main-content {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 800px;
+    background-color: #00000096;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 70px 50px;
+}
+
+.terms-registration label {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
 }

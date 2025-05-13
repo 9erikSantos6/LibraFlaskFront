@@ -1,8 +1,8 @@
-import { customModalAlert } from './customModal.js';
 import { API_ENDPOINTS, requestAPI } from '../utils/api.js';
-import { isValidEmail } from '../utils/validadores.js';
+import { isValidEmail, isValidPassword } from '../utils/validadores.js';
 import { salvarAuthToken } from '../utils/auth.js';
 
+import * as userAlertHandler from './userAlertHandler.js';
 
 const wrapperAuth = document.querySelector('.wrapper-auth');
 const loginForm = document.querySelector('.login-form');
@@ -19,35 +19,22 @@ loginForm.addEventListener('submit', (e) => {
         password: userPasswordInput.value
     }
 
-    // Verificar se o e-mail é válido
-    if (!isValidEmail(userCredentials.email)) {
-        customModalAlert.abrirModal('Por favor, insira um e-mail válido!', 'Fechar');
-        loginForm.reset();
-        return;
-    }
-
     requestAPI('POST', API_ENDPOINTS.LOGIN, userCredentials)
-            .then(data => {
-                // Verificar se a resposta contém um token de autenticação
-                if (data && data.auth_token) {
-                    salvarAuthToken(data); // Salvar o token
-                    // updateMenuState(); // Atualiza o estado do menu
-                    customModalAlert.abrirModal('Usuário logado com sucesso!', 'Fechar');
-                    loginForm.reset();
-                    console.log(data);
-                    wrapperAuth.classList.remove('active-popup'); // Fechar a tela de login
-
-                    customNavTopBtn.textContent = 'Logado'; // Atualizar o texto do botão
-                    customNavTopBtn.disabled = true; // Desabilitar o botão
-                } else {
-                    // Se não houver token, significa que houve um erro
-                    customModalAlert.abrirModal('Erro ao realizar login: ' + (data.message || 'Credenciais inválidas'), 'Fechar');
-                }
-            })
-
+        .then(resposta => {
+            if (!resposta.ok) {
+                console.error('Erro ao realizar login:\n', resposta.status, resposta.data);
+                userAlertHandler.exibirMensagemErroAPI(resposta.data, resposta.status);
+                loginForm.reset();
+                return;
+            }
+            salvarAuthToken(resposta.data)
+            userAlertHandler.exibirMensagemSucesso('Usuário logado com sucesso!');
+            loginForm.reset();
+            wrapperAuth.classList.remove('active');
+        })
         .catch(error => {
             console.error(error);
-            customModalAlert.abrirModal('Erro ao realizar login', 'Fechar');
+            userAlertHandler.exibirMensagemErroComum(error.message);
         });
 });
 

@@ -27,14 +27,24 @@ export const requestAPI = async (method, url, body = null, token = null) => {
     // Faz a requisição
     try {
         const resposta = await fetch(url, opcoes);
-        if (!resposta.ok) {
-            const textoErro = await resposta.text();
-            throw new Error(`Erro de requisição! Status: ${resposta.status} - ${textoErro}`);
-        }
         const texto = await resposta.text();
-        return texto ? JSON.parse(texto) : null;
+
+        let data;
+        try {
+            data = JSON.parse(texto);
+        } catch {
+            data = texto;
+        }
+
+        return {
+            ok: resposta.ok,
+            status: resposta.status,
+            data
+        };
     } catch (erro) {
-        console.error(erro);
-        return null;
+        if (erro instanceof TypeError && erro.message === 'Failed to fetch') {
+            throw new Error('Não foi possível conectar ao servidor. Verifique sua conexão ou tente novamente mais tarde.');
+        }
+        throw erro;
     }
 }
