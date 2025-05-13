@@ -10,7 +10,6 @@ export const getUserData = () => {
     return JSON.parse(localStorage.getItem('user')) || [];
 }
 
-
 // Função para excluir todos os usuários (caso precise de uma função de limpeza)
 export const clearUserData = () => {
     localStorage.removeItem('user');

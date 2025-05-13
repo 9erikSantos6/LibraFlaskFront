@@ -14,9 +14,3 @@ export const getBooks = () => {
 export const clearBooks = () => {
     localStorage.removeItem('books');
 }
-
-
-
-
-
-

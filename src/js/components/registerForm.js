@@ -14,7 +14,7 @@ registerForm.addEventListener('submit', (e) => {
     // Obter os valores dos campos do formulário
     const nome = document.getElementById('registration-name').value;
     const email = document.getElementById('registration-email').value;
-    const senha = document.getElementById('reagistration-password').value;
+    const senha = document.getElementById('registration-password').value;
     const termos = registerForm.querySelector('input[type="checkbox"]');
 
     // Verificar se aceitou os termos
@@ -51,54 +51,5 @@ registerForm.addEventListener('submit', (e) => {
             customModalAlert.abrirModal('Erro ao registrar usuário', 'Fechar');
         });   
 });
-
-
-
-
-// registerForm.addEventListener('submit', (e) => {
-    
-//     Verificar se o e-mail é válido
-//     if (!isValidEmail(email)) {
-//         alertMessage.textContent = 'Por favor, insira um e-mail válido!';
-//         customAlert.style.display = 'flex';
-//         registerForm.querySelectorAll('input[placeholder=""]')[1].value = '';
-//         return;
-//     }
-
-//     Verificar se o e-mail já está cadastrado
-//     if (checkEmailExists(email)) {
-//         alertMessage.textContent = 'Este e-mail já está registrado!';
-//         customAlert.style.display = 'flex';
-//         registerForm.querySelectorAll('input[placeholder=""]')[1].value = '';
-//         return;
-//     }
-      
-//     let baseUsername = nome.toLowerCase().replace(/\s+/g, '');
-//     const randomNum = Math.floor(Math.random() * 1000);
-//     let username = (baseUsername + randomNum).substring(0, 20);
-
-//     Verificar se o e-mail é válido
-//     if (!isValidEmail(email)) {
-//         alertMessage.textContent = 'Por favor, insira um e-mail válido!';
-//         customAlert.style.display = 'flex';
-//         registerForm.querySelectorAll('input[placeholder=""]')[1].value = '';
-//         return;
-//     }
-
-//     Verificar se o e-mail já está cadastrado
-//     if (checkEmailExists(email)) {
-//         alertMessage.textContent = 'Este e-mail já está registrado!';
-//         customAlert.style.display = 'flex';
-//         registerForm.querySelectorAll('input[placeholder=""]')[1].value = '';
-//         return;
-//     }
-      
-//     let baseUsername = nome.toLowerCase().replace(/\s+/g, '');
-//     const randomNum = Math.floor(Math.random() * 1000);
-//     let username = (baseUsername + randomNum).substring(0, 20);
-
-    
-// });
-
 
     
