@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login & Registration</title>
   <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/carousel.css">
   <link rel="stylesheet" href="../css/pages/initial.css">
   <link rel="icon" href="./favicon.ico" sizes="100x100" type="image/x-icon">
 </head>
@@ -39,7 +38,7 @@
       <ul>
         <li><a href="./profile.html" class="menu-item">Meu Perfil</a></li>
         <li><a href="#" class="menu-item">Favoritos</a></li>
-        <li><a href="./adicionar.html" class="menu-item">Adicionar livro</a></li>
+        <li><a href="./livros.html" class="menu-item">Adicionar livro</a></li>
         <li><a href="#" class="menu-item">Configurações de Conta</a></li>
         <li><a href="#" id="logoutBtn">Sair</a></li>
       </ul>
@@ -158,11 +157,14 @@
 
 
   <noscript>Você precida de JavaScript para rodar essa.</noscript>
+  <script src="../js/components/sidebar.js" type="module" defer></script>
+  <script src="../js/components/wrapperAuth.js" defer></script>
+
+  <!-- <script src="../js/components/carousel.js" type="module" defer></script> -->
+
   <script src="../js/components/loginForm.js" type="module" defer></script>
   <script src="../js/components/registerForm.js" type="module" defer></script>
 
-  <!-- <script src="../js/components/wrapperAuth.js" defer></script>
-  <script src="../js/components/sidebar.js" defer></script> -->
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
