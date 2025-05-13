@@ -14,19 +14,6 @@ loginForm.addEventListener('submit', (e) => {
     const userEmailInput = document.getElementById('login-email');
     const userPasswordInput = document.getElementById('login-password');
 
-    // Verificar se o e-mail é válido
-    if (!isValidEmail(userEmailInput)) {
-        userAlertHandler.exibirMensagemErroComum('Por favor, insira um e-mail válido!');
-        loginForm.reset();
-        return;
-    }
-
-    if (!isValidPassword(userPasswordInput)) {
-        userAlertHandler.exibirMensagemErroComum('Isso não corresponde a um formato de senha válido!');
-        loginForm.reset();
-        return;
-    }
-
     const userCredentials = {
         email: userEmailInput.value,
         password: userPasswordInput.value
@@ -40,13 +27,29 @@ loginForm.addEventListener('submit', (e) => {
                 loginForm.reset();
                 return;
             }
-            salvarAuthToken(data)
+            salvarAuthToken(resposta.data)
             userAlertHandler.exibirMensagemSucesso('Usuário logado com sucesso!');
             loginForm.reset();
-            wrapperAuth.classList.remove('active');
+            wrapperAuth.classList.remove('active-popup'); // Fechar a tela de login
+            customNavTopBtn.textContent = 'Logado'; // Atualizar o texto do botão
+            customNavTopBtn.disabled = true; // Desabilitar o botão
         })
+        // Tratamento de erro
         .catch(error => {
             console.error(error);
-            userAlertHandler.abrirModal(error.message, 'Fechar');
+            userAlertHandler.exibirMensagemErroComum(error.message);
         });
 });
+
+// Verificar se o usuário está logado
+const authToken = localStorage.getItem('auth_token');
+const customNavTopBtn = document.querySelector('.custom-nav-top-btn');
+if (authToken) {
+    // O usuário está logado
+    customNavTopBtn.textContent = 'Logado'; // Muda o texto do botão
+    customNavTopBtn.disabled = true; // Desabilita o botão
+} else {
+    // O usuário não está logado
+    customNavTopBtn.textContent = 'Login / Sing-up'; // Muda o texto do botão de volta
+    customNavTopBtn.disabled = false; // Habilita o botão
+}

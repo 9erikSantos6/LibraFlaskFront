@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login & Registration</title>
   <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/carousel.css">
   <link rel="stylesheet" href="../css/pages/initial.css">
   <link rel="icon" href="./favicon.ico" sizes="100x100" type="image/x-icon">
 </head>
@@ -36,11 +37,11 @@
     <!-- Menu lateral (Sidebar) -->
     <nav class="sidebar" id="sidebar">
       <ul>
-        <li><a href="./profile.html">Meu Perfil</a></li>
-        <li><a href="#">Favoritos</a></li>
-        <li><a href="./adicionar.html">Adicionar livro</a></li>
-        <li><a href="#">Configurações de Conta</a></li>
-        <li><a href="#">Sair</a></li>
+        <li><a href="./profile.html" class="menu-item">Meu Perfil</a></li>
+        <li><a href="#" class="menu-item">Favoritos</a></li>
+        <li><a href="./adicionar.html" class="menu-item">Adicionar livro</a></li>
+        <li><a href="#" class="menu-item">Configurações de Conta</a></li>
+        <li><a href="#" id="logoutBtn">Sair</a></li>
       </ul>
     </nav>
 
@@ -63,6 +64,18 @@
     </nav>
   </header>
 
+  <!-- Carrossel -->
+  <!-- <div class="carousel-container">
+    <button class="nav-button left" id="prevBtn">❮</button>
+    <div class="carousel">
+        <div class="carousel-items" id="carouselItems">
+           
+
+
+        </div>
+    </div>
+    <button class="nav-button right" id="nextBtn">❯</button>
+  </div> -->
   <div class="overlay"></div>
   <div class="wrapper-auth">
     <span class="icon-close" id="close-wrapper-auth-icon"><ion-icon name="close"></ion-icon></span>
@@ -81,13 +94,10 @@
           <input type="password" id="login-password" placeholder="" autocomplete="current-password">
           <label>Senha</label>
         </div>
-        <!-- <div class="remember-forgot">
+        <div class="remember-forgot">
           <label for=""><input type="checkbox">Lembrar-me</label>
-
-        </div> -->
-        <a href="#" id="forgot-password-link">Esqueceu sua senha?</a>
-        <br>
-        <br>
+          <a href="#">Esqueceu sua senha?</a>
+        </div>
         <button type="submit" class="btn">Login</button>
         <div class="auth-dialog">
           <p>Não tem uma conta? <a class="register-link">Registre-se</a></p>
@@ -106,11 +116,6 @@
           <label for="name">Nome</label>
         </div>
         <div class="input-box">
-          <span class="icon"><ion-icon name="person"></ion-icon></span>
-          <input type="text" id="registration-username" required placeholder="">
-          <label for="username">Username</label>
-        </div>
-        <div class="input-box">
           <span class="icon"><ion-icon name="mail"></ion-icon></span>
           <input type="email" id="registration-email" required placeholder="" autocomplete="email">
           <label for="email">Email</label>
@@ -120,9 +125,9 @@
           <input type="password" id="registration-password" required placeholder="" autocomplete="new-password">
           <label for="password">Senha</label>
         </div>
-        <div class="terms-registration">
+        <div class="remember-forgot">
           <input type="checkbox" name="accept-terms" id="accept-terms" required>
-          <label for="accept-terms">Você concorda com os nossos termos e condições?</label>
+          <label for="accept-terms"> Você concorda com os nossos termos e condições?</label>
         </div>
         <button type="submit" class="btn">Registre-se</button>
         <div class="auth-dialog">
@@ -132,7 +137,7 @@
     </div>
   </div>
 
-  <main>
+  <!-- <main>
     <div class="main-content">
       <h1>LibraFlask</h1>
       <br>
@@ -141,15 +146,17 @@
       <p>Faça login ou registre-se para começar a usar todos os recursos disponíveis.</p>
 
     </div>
-  </main>
+  </main> -->
+  <script src="../js/components/sidebar.js" type="module" defer></script>
+  <script src="../js/components/wrapperAuth.js" defer></script>
+  
+  <script src="../js/components/carousel.js" type="module" defer></script>
 
-
-  <noscript>Você precida de JavaScript para rodar essa.</noscript>
   <script src="../js/components/loginForm.js" type="module" defer></script>
   <script src="../js/components/registerForm.js" type="module" defer></script>
 
-  <script src="../js/components/wrapperAuth.js" defer></script>
-  <script src="../js/components/sidebar.js" defer></script>
+  <!-- <script src="../js/components/wrapperAuth.js" defer></script>
+  <script src="../js/components/sidebar.js" defer></script> -->
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>

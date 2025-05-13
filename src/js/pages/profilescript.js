@@ -1,9 +1,57 @@
+const userInfo = document.getElementById('userInfo');
+const deleteProfileBtn = document.getElementById('deleteProfileBtn');
+
 const editProfileBtn = document.querySelector('.custom-nav-top-btn');
 const closeBtn = document.querySelector('.icon-close-add');
 const wrapperAdd = document.querySelector('.wrapper-add');
 const form = document.querySelector('form');
 const cancelBtn = document.querySelector('.btn-cancel');
 const confirmBtn = document.querySelector('.btn-confirm');
+
+
+
+
+// // Função para carregar as informações do usuário
+// const loadUser Info = async () => {
+//     try {
+//         const response = await fetch('http://localhost:15000/usuario'); // Endpoint para obter o usuário
+//         const user = await response.json();
+//         displayUser Info(user);
+//     } catch (error) {
+//         console.error('Erro ao carregar informações do usuário:', error);
+//     }
+// };
+
+
+// // Função para exibir as informações do usuário
+// const displayUser Info = (user) => {
+//     userInfo.innerHTML = `
+//         <h2>Nome de Usuário: ${user.username}</h2>
+//         <p><strong>Nome:</strong> ${user.nome}</p>
+//         <p><strong>Email:</strong> ${user.email}</p>
+//     `;
+// };
+
+// // Função para deletar o perfil
+// const deleteProfile = async () => {
+//     const response = await fetch('http://localhost:15000/usuario', {
+//         method: 'DELETE',
+//         headers: {
+//             'Authorization': `Bearer ${localStorage.getItem('auth_token')}`
+//         }
+//     });
+//     if (response.ok) {
+//         customModalAlert.abrirModal('Perfil deletado com sucesso!', 'Fechar');
+//         localStorage.removeItem('auth_token'); // Remove o token
+//         window.location.href = './index.html'; // Redireciona para a página inicial
+//     } else {
+//         customModalAlert.abrirModal('Erro ao deletar o perfil.', 'Fechar');
+//     }
+// };
+
+// // Evento para o botão de deletar perfil
+// deleteProfileBtn.addEventListener('click', deleteProfile);
+
 
 
 // Abrir a janela
@@ -35,3 +83,6 @@ document.addEventListener('click', (e) => {
 document.querySelector('.btn-cancel').addEventListener('click', () => {
     document.querySelector('.wrapper-add').style.display = 'none'; // Esconder o formulário de edição
 });
+
+// Carregar as informações do usuário ao iniciar a página
+// loadUser Info();

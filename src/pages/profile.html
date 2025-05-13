@@ -36,13 +36,13 @@
         <!-- Menu lateral (Sidebar) -->
         <nav class="sidebar" id="sidebar">
             <ul>
-                <li><a href="./profile.html">Meu Perfil</a></li>
-                <li><a href="#">Favoritos</a></li>
-                <li><a href="./adicionar.html">Adicionar livro</a></li>
-                <li><a href="#">Configurações de Conta</a></li>
-                <li><a href="#">Sair</a></li>
+              <li><a href="./profile.html" class="menu-item">Meu Perfil</a></li>
+              <li><a href="#" class="menu-item">Favoritos</a></li>
+              <li><a href="./adicionar.html" class="menu-item">Adicionar livro</a></li>
+              <li><a href="#" class="menu-item">Configurações de Conta</a></li>
+              <li><a href="#" id="logoutBtn">Sair</a></li>
             </ul>
-        </nav>
+          </nav>
 
         <!-- Nome/logo do sistema -->
         <a href="./index.html" class="logo">LibraFlask</a>
@@ -62,6 +62,13 @@
             <button class="custom-nav-top-btn">Editar Perfil</button>
         </nav>
     </header>
+
+
+    <div class="user-info" id="userInfo">
+        <!-- As informações do usuário serão inseridas aqui dinamicamente -->
+    </div>
+    <!-- <button id="deleteProfileBtn">Deletar Perfil</button> -->
+
 
     <div class="overlay"></div>
     <div class="wrapper-add">
