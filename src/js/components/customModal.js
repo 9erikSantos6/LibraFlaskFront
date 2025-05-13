@@ -20,15 +20,18 @@ export const fecharModal = () => {
     modalCloseButton.blur();
 }
 
+// Fechar o modal ao clicar no botão
 modalCloseButton.addEventListener('click', (e) => {
     fecharModal();
     e.stopPropagation();
 });
 
+// Evita que o modal seja fechado ao clicar fora dele
 modal.addEventListener('click', (e) => {
     e.stopPropagation();
 });
 
+// Fecha o modal ao pressionar a tecla ESC
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
         fecharModal();
